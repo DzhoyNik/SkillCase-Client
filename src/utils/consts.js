@@ -1,0 +1,4 @@
+export const LANDING_ROUTE = '/'
+export const CASES_ROUTE = '/cases'
+export const AUTH_ROUTE = '/auth'
+export const PROFILE_ROUTE = '/profile'

@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+:root {
+    --background-1: #fff;
+    --background-2: #cfcfcf;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    border: none;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    padding: 35px 100px;
+    background: var(--background-1);
+}

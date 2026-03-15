@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+.landing {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    background-color: var(--background-1);
+}
+
+.section {
+    width: 100%;
+    background-color: var(--background-2);
+}
+
+.topbar {
+    width: 100%;
+    height: 80px;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 20% 50% 20%;
+}
+
+.header {
+    width: 100%;
+    height: 400px;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 75% 25%;
+}
+
+.dignities {
+    width: 100%;
+    height: 200px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.works {
+    width: 100%;
+    min-height: 400px;
+    background-color: var(--background-2);
+}
+
+.cases {
+    width: 100%;
+    min-height: 400px;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    gap: 2rem;
+}
+
+.companies {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    gap: 2rem;
+    padding: 0rem 10rem;
+    justify-content: space-evenly;
+}
+
+.footer {
+    width: 100%;
+    height: 200px;
+    background-color: var(--background-2);
+}
