@@ -1,8 +1,17 @@
 @charset "UTF-8";
 
 :root {
-    --background-1: #fff;
+    --background-1: #ffffff;
     --background-2: #cfcfcf;
+    /* --background-1: #1A1A22; */
+    /* --background-2: #36364C; */
+    --background-3: #435CFF;
+
+    --font-color-1: #111;
+    /* --font-color-1: #fff; */
+
+    --border-radius-1: 25px;
+    --border-radius-2: 100px;
 }
 
 * {
@@ -16,6 +25,67 @@
 body {
     width: 100%;
     min-height: 100vh;
-    padding: 35px 100px;
     background: var(--background-1);
+}
+
+h1 {
+    color: var(--font-color-1);
+    font-size: 34px;
+    font-family: montserrat, sans-serif;
+    font-weight: 700;
+    line-height: 44px;
+}
+
+h2 {
+    color: var(--font-color-1);
+    font-size: 26px;
+    font-family: montserrat, sans-serif;
+    font-weight: 700;
+    line-height: 34px;
+}
+
+h3 {
+    color: var(--font-color-1);
+    font-size: 20px;
+    font-family: montserrat, sans-serif;
+    font-weight: 700;
+    line-height: 26px;
+}
+
+h4 {
+    color: var(--font-color-1);
+    font-size: 16px;
+    font-family: montserrat, sans-serif;
+    font-weight: 700;
+}
+
+p {
+    color: var(--font-color-1);
+    font-size: 12px;
+    font-family: montserrat, sans-serif;
+    font-weight: 500;
+}
+
+input {
+    user-select: none;
+    color: var(--font-color-1);
+    width: 100%;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: montserrat, sans-serif;
+    background: var(--background-1);
+    border-radius: var(--border-radius-2);
+    padding: 1rem;
+}
+
+button {
+    width: 100%;
+    font-size: 20px;
+    font-family: montserrat, sans-serif;
+    font-weight: 700;
+    color: #fff;
+    background: var(--background-3);
+    border-radius: var(--border-radius-2);
+    padding: 1rem;
+    cursor: pointer;
 }

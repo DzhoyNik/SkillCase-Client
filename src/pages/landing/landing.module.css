@@ -3,6 +3,7 @@
 .landing {
     width: 100%;
     min-height: 100vh;
+    padding: 35px 100px;
     display: flex;
     flex-direction: column;
     gap: 25px;
