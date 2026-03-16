@@ -53,11 +53,15 @@ h3 {
     line-height: 26px;
 }
 
-h4 {
-    color: var(--font-color-1);
+h4, a {
+    color: var(--font-color-1), inherit;
     font-size: 16px;
     font-family: montserrat, sans-serif;
     font-weight: 700;
+}
+
+a {
+    text-decoration: none;
 }
 
 p {
