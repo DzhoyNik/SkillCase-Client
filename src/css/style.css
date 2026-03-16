@@ -5,7 +5,7 @@
     --background-2: #cfcfcf;
     /* --background-1: #1A1A22; */
     /* --background-2: #36364C; */
-    --background-3: #435CFF;
+    --background-3: linear-gradient(45deg, #435CFF 0%, #2E2ED9 100%);
 
     --font-color-1: #111;
     --font-color-2: #666;
@@ -30,7 +30,7 @@ body {
 }
 
 h1 {
-    color: var(--font-color-1);
+    color: var(--font-color-1), inherit;
     font-size: 34px;
     font-family: montserrat, sans-serif;
     font-weight: 700;
@@ -38,7 +38,7 @@ h1 {
 }
 
 h2 {
-    color: var(--font-color-1);
+    color: var(--font-color-1), inherit;
     font-size: 26px;
     font-family: montserrat, sans-serif;
     font-weight: 700;
@@ -46,7 +46,7 @@ h2 {
 }
 
 h3 {
-    color: var(--font-color-1);
+    color: var(--font-color-1), inherit;
     font-size: 20px;
     font-family: montserrat, sans-serif;
     font-weight: 700;
@@ -65,10 +65,11 @@ a {
 }
 
 p {
-    color: var(--font-color-1);
-    font-size: 12px;
+    color: var(--font-color-1), inherit;
+    font-size: 14px;
     font-family: montserrat, sans-serif;
     font-weight: 500;
+    line-height: 20px;
 }
 
 input {

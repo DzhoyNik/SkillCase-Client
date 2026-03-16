@@ -27,6 +27,7 @@
 }
 
 .auth__body {
+    position: relative;
     width: 45%;
     min-height: 500px;
     padding: 2rem 5rem;
@@ -46,6 +47,13 @@
 
 .auth__body button {
     background: var(--background-3);
+}
+
+
+.auth__back {
+    position: absolute;
+    top: -2.5rem;
+    left: -10rem;
 }
 
 .auth__signUp, .auth__signIn, .auth__choice {

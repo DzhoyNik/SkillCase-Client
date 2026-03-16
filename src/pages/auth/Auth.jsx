@@ -3,6 +3,7 @@ import style from "./auth.module.css"
 import SignIn from "./SignIn"
 import SignUp from "./SignUp"
 import Choice from "./Choice"
+import { NavLink } from "react-router"
 
 
 const Auth = () => {
@@ -13,9 +14,12 @@ const Auth = () => {
                 <h1>SkillCase</h1>
             </div>
             <div className={style.auth__body}>
-                {/* <SignIn /> */}
+                <div className={style.auth__back}>
+                    <NavLink to='/'><button type="button">На главную</button></NavLink>
+                </div>
+                <SignIn />
                 {/* <Choice /> */}
-                <SignUp />
+                {/* <SignUp /> */}
             </div>
         </div>
     )
