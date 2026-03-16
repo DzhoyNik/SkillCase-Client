@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+.cases {
+    width: 100%;
+    min-height: 100vh;
+    padding: 35px 100px;
+}
+
+.cases__title, .cases__description {
+    text-align: center;
+}
+
+.cases__title {
+    margin-top: 2rem;
+}
+
+.cases__description {
+    width: 28%;
+    margin: 1rem auto;
+    color: var(--font-color-2);
+}
+
+.cases__content {
+    width: 100%;
+    min-height: 30vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 1rem;
+}
+
+.cases__sidebar {
+    width: 100%;
+    height: 350px;
+    background: var(--background-2);
+}
+
+.cases__main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cases__search {
+    width: 100%;
+    height: 60px;
+    background: var(--background-2);
+}
+
+.cases__list {
+    width: 100%;
+    min-height: 30vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.case__item {
+    cursor: pointer;
+    width: 100%;
+    height: 298px;
+    background: var(--background-2);
+}
+
+.cases__pagination {
+    width: 100%;
+    height: 60px;
+    margin: 1rem 0;
+}
+
+.cases__paginationBody {
+    width: 30%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.cases__paginationArrow, .cases__paginationItem {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background: var(--background-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100px;
+    /* border: 1px solid rgba(0, 0, 0, 0.2); */
+    box-shadow: 0 0.35rem 10px rgba(0, 0, 0, 0.2);
+}
+
+.cases__paginationList {
+    display: flex;
+    gap: 0.5rem;
+}
