@@ -20,7 +20,7 @@ const Landing = () => {
                         <NavLink to='/'>Партнеры</NavLink>
                     </div>
                     <div className={style.topbar__auth}>
-                        <NavLink to='/auth'>Авторизоваться</NavLink>
+                        <NavLink to='/auth?page=signIn'>Авторизоваться</NavLink>
                         <IoChevronForward />
                     </div>
                 </div>

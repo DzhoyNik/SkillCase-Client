@@ -63,6 +63,19 @@
     gap: 2rem;
 }
 
+.auth__bodyInput {
+    position: relative;
+}
+
+.auth__bodyInput svg {
+    color: #435CFF;
+    position: absolute;
+    z-index: 1;
+    top: 1.15rem;
+    left: 1.15rem;
+    font-size: 1.25rem;
+}
+
 .auth__bodySection {
     padding: 2rem;
     background: var(--background-2);
@@ -72,7 +85,7 @@
     border-radius: var(--border-radius-1);
 }
 
-.auth__signIn p {
+.auth__signIn a {
     text-align: center;
 }
 

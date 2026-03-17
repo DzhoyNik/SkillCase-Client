@@ -1,7 +1,10 @@
 import React from "react";
 import style from "./auth.module.css"
+import { NavLink, useNavigate } from "react-router";
 
 const SignUp = () => {
+    const navigate = useNavigate()
+
     return(
         <div className={style.auth__signUp}>
             <h1>Регистрация</h1>
@@ -14,8 +17,8 @@ const SignUp = () => {
                 <input type="email" placeholder="Почта" />
                 <input type="password" placeholder="Пароль" />
             </div>
-            <button type="button">Создать аккаунт</button>
-            <h4 style={{ textAlign: "center" }}>Уже есть учетная запись? <a href="/auth/sign-in">Войти</a></h4>
+            <button type="button" onClick={() => navigate('/cases')}>Создать аккаунт</button>
+            <h4 style={{ textAlign: "center" }}>Уже есть учетная запись? <NavLink to="/auth?page=signIn">Войти</NavLink></h4>
         </div>
     )
 }

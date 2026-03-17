@@ -32,6 +32,8 @@
 }
 
 .overlay__profile {
+    position: relative;
+    cursor: pointer;
     display: flex;
     gap: 1rem;
 }
@@ -54,4 +56,39 @@
 
 .overlay__profileIcon {
     width: 90px;
+}
+
+.overlay__profileMenu {
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    width: 320px;
+    min-height: 240px;
+    padding: 0.5rem 1.5rem;
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: space-evenly;
+    background: var(--background-1);
+    border-radius: var(--border-radius-1);
+    box-shadow: 0 0.35rem 10px rgba(0, 0, 0, 0.2);
+}
+
+.overlay__profileMenuOpen {
+    display: flex;
+}
+
+.overlay__profileMenuItem {
+    pointer-events: auto;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: var(--border-radius-1);
+}
+
+.overlay__profileMenuItem:hover {
+    background: rgba(0, 0, 255, 0.1);
+}
+
+.overlay__profileMenu hr {
+    border: 1px solid rgba(0, 0, 0, 0.2);
 }

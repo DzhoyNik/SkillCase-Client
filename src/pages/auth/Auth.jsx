@@ -1,12 +1,22 @@
-import { React } from "react"
 import style from "./auth.module.css"
-import SignIn from "./SignIn"
-import SignUp from "./SignUp"
-import Choice from "./Choice"
-import { NavLink } from "react-router"
+import { SignIn, SignUp, Choice } from "./index"
+import { NavLink, useSearchParams } from "react-router"
 
 
 const Auth = () => {
+    const [searchParams] = useSearchParams()
+    const page = searchParams.get('page')
+
+    const typeAuth = {
+        'signIn': SignIn,
+        'signUp': SignUp,
+        'choice': Choice
+    }
+
+    const DEFAULT_PAGE = 'signIn'
+
+    const Component = typeAuth[page] || typeAuth[DEFAULT_PAGE]
+
     return(
         <div className={style.auth}>
             <div className={style.logo}>
@@ -17,9 +27,7 @@ const Auth = () => {
                 <div className={style.auth__back}>
                     <NavLink to='/'><button type="button">На главную</button></NavLink>
                 </div>
-                <SignIn />
-                {/* <Choice /> */}
-                {/* <SignUp /> */}
+                <Component /> 
             </div>
         </div>
     )
