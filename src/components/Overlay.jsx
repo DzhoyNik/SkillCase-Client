@@ -27,7 +27,9 @@ const Overlay = () => {
                         <IoChevronBack />
                     </div>
                     <div className={`${styles.overlay__profileMenu} ${profileMenuOpen ? styles.overlay__profileMenuOpen : ''}`}>
-                        <div className={styles.overlay__profileMenuItem}><h4>Профиль</h4></div>
+                        <div className={styles.overlay__profileMenuItem} onClick={() => navigate('/profile')}>
+                            <h4>Профиль</h4>
+                        </div>
                         <hr />
                         <div className={styles.overlay__profileMenuItem}><h4>Настройки</h4></div>
                         <div className={styles.overlay__profileMenuItem}><h4>Сменить тему</h4></div>

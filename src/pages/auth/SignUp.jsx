@@ -17,7 +17,7 @@ const SignUp = () => {
                 <input type="email" placeholder="Почта" />
                 <input type="password" placeholder="Пароль" />
             </div>
-            <button type="button" onClick={() => navigate('/cases')}>Создать аккаунт</button>
+            <button type="button" onClick={() => navigate('/auth?page=choice')}>Создать аккаунт</button>
             <h4 style={{ textAlign: "center" }}>Уже есть учетная запись? <NavLink to="/auth?page=signIn">Войти</NavLink></h4>
         </div>
     )

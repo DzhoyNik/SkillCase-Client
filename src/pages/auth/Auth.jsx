@@ -1,5 +1,5 @@
 import style from "./auth.module.css"
-import { SignIn, SignUp, Choice } from "./index"
+import { SignIn, SignUp, Choice, CompanyApplication } from "./index"
 import { NavLink, useSearchParams } from "react-router"
 
 
@@ -10,7 +10,8 @@ const Auth = () => {
     const typeAuth = {
         'signIn': SignIn,
         'signUp': SignUp,
-        'choice': Choice
+        'choice': Choice,
+        'application': CompanyApplication
     }
 
     const DEFAULT_PAGE = 'signIn'

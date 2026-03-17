@@ -6,14 +6,16 @@ const Choice = () => {
     const navigate = useNavigate()
 
     const handleChoice = (type) => {
-        navigate(`/auth?page=signUp&type=${type}`)
+        type === 'employer'
+            ? navigate('/cases')
+            : navigate('/auth?page=application&step=1')
     }
 
     return(
         <div className={style.auth__choice}>
             <h1>Какой хотите создать аккаунт?</h1>
             <div className={`${style.auth__bodySection} ${style.auth__choiceSection}`}>
-                <div className={style.auth__choiceButton} onClick={handleChoice.bind(null, 'candidate')}>
+                <div className={style.auth__choiceButton} onClick={handleChoice.bind(null, 'employer')}>
                     <h3>Я соискатель</h3>
                     <div className={style.auth__choiceArrow}>
                         <h2>{'>'}</h2>

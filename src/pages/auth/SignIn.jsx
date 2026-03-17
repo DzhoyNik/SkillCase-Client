@@ -20,7 +20,7 @@ const SignIn = () => {
                 </div>
             </div>
             <button type="button" onClick={() => navigate('/cases')}>Войти</button>
-            <NavLink to="/auth?page=choice">Создать учетную запись</NavLink>
+            <NavLink to="/auth?page=signUp">Создать учетную запись</NavLink>
             <NavLink to="/auth?page=forgot">Забыли пароль?</NavLink>
         </div>
     )
