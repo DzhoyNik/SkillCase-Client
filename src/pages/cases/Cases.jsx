@@ -4,8 +4,9 @@ import Overlay from "../../components/Overlay"
 import CaseItem from "./CaseItem"
 import { IoChevronBack, IoChevronForward, IoSearch } from "react-icons/io5"
 import Footer from "../../components/Footer"
+import { observer } from "mobx-react-lite"
 
-const Cases = () => {
+const Cases = observer(() => {
     return(
         <>
             <div className={styles.cases}>
@@ -68,6 +69,6 @@ const Cases = () => {
             <Footer />
         </>
     )
-}
+})
 
 export default Cases

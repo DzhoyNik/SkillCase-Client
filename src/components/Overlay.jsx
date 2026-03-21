@@ -1,14 +1,23 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { IoChevronBack, IoNotifications, IoPerson } from "react-icons/io5"
 import styles from "../css/overlay.module.css"
 import { useNavigate } from "react-router";
+import { observer } from "mobx-react-lite";
+import { Context } from "..";
 
-const Overlay = () => {
+const Overlay = observer(() => {
     const navigate = useNavigate()
+    const { user } = useContext(Context)
     const [profileMenuOpen, setProfileMenuOpen] = useState(false)
 
     const toggleProfileMenu = () => {
         setProfileMenuOpen(!profileMenuOpen)
+    }
+
+    const handleLogOut = () => {
+        user.setUser({})
+        user.setIsAuth(false)
+        localStorage.removeItem('token')
     }
 
     return (
@@ -34,7 +43,7 @@ const Overlay = () => {
                         <div className={styles.overlay__profileMenuItem}><h4>Настройки</h4></div>
                         <div className={styles.overlay__profileMenuItem}><h4>Сменить тему</h4></div>
                         <hr />
-                        <div className={styles.overlay__profileMenuItem} onClick={() => navigate('/')}>
+                        <div className={styles.overlay__profileMenuItem} onClick={handleLogOut}>
                             <h4>Выйти</h4>
                         </div>
                     </div>
@@ -42,6 +51,6 @@ const Overlay = () => {
             </div>
         </div>
     )
-}
+})
 
 export default Overlay
