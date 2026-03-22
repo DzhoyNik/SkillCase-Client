@@ -1,11 +1,21 @@
-import { React } from "react"
+import { React, useContext, useEffect } from "react"
 import style from './landing.module.css'
 import Footer from "../../components/Footer"
-import { NavLink } from "react-router"
+import { NavLink, useNavigate } from "react-router"
 import { IoChevronForward } from "react-icons/io5"
 import { comp_1, comp_2, comp_3, dignitie_1, dignitie_2, dignitie_3, dignitie_4 } from "../../assets"
+import { observer } from "mobx-react-lite"
+import { Context } from "../.."
+import { CASES_ROUTE } from "../../utils/consts"
 
-const Landing = () => {
+const Landing = observer(() => {
+    const { user } = useContext(Context)
+    const navigate = useNavigate()
+
+    useEffect(() => {
+        if ( user.isAuth ) return navigate(CASES_ROUTE)
+    }, [])
+
     return(
         <>
             <div className={style.landing}>
@@ -113,6 +123,6 @@ const Landing = () => {
             <Footer />
         </>
     )
-}
+})
 
 export default Landing

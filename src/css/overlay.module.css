@@ -21,7 +21,7 @@
     pointer-events: auto;
     display: flex;
     align-items: center;
-    gap: 1rem;   
+    gap: 1rem;
 }
 
 .overlay__logoIcon {

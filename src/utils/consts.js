@@ -1,5 +1,6 @@
 export const LANDING_ROUTE = '/'
 export const ADMIN_ROUTE = '/admin'
+export const COMPANY_ROUTE = '/company'
 export const CASES_ROUTE = '/cases'
 export const AUTH_ROUTE = '/auth'
 export const PROFILE_ROUTE = '/profile'

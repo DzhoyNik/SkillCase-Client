@@ -19,6 +19,10 @@
 .env.test.local
 .env.production.local
 
+/src/routes.js
+/src/pages/admin/
+/src/img/landing.png
+
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

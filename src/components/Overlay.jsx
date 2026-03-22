@@ -1,9 +1,10 @@
 import React, { useContext, useState } from "react";
 import { IoChevronBack, IoNotifications, IoPerson } from "react-icons/io5"
 import styles from "../css/overlay.module.css"
-import { useNavigate } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import { observer } from "mobx-react-lite";
 import { Context } from "..";
+import { CASES_ROUTE } from "../utils/consts";
 
 const Overlay = observer(() => {
     const navigate = useNavigate()
@@ -23,10 +24,12 @@ const Overlay = observer(() => {
     return (
         <div className={styles.overlay}>
             <div className={styles.overlay__content}>
-                <div className={styles.overlay__logo}>
-                    <div className={styles.overlay__logoIcon}></div>
-                    <h1>SkillCase</h1>
-                </div>
+                <NavLink to={CASES_ROUTE}>
+                    <div className={styles.overlay__logo}>
+                        <div className={styles.overlay__logoIcon}></div>
+                        <h1>SkillCase</h1>
+                    </div>
+                </NavLink>
                 <div className={styles.overlay__profile}>
                     <div className={styles.overlay__notify}>
                         <IoNotifications />
