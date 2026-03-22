@@ -7,6 +7,7 @@ import { useContext, useEffect, useState } from "react"
 import { Context } from "../.."
 import { CASES_ROUTE, COMPANY_ROUTE } from "../../utils/consts"
 import { findApplication } from "../../api/companyAPI"
+import { IoBarChart, IoDocumentSharp, IoFileTrayStacked, IoLogOut, IoNotificationsSharp, IoPerson, IoSettings } from "react-icons/io5"
 
 const Profile = observer(() => {
     const { user } = useContext(Context)
@@ -32,6 +33,7 @@ const Profile = observer(() => {
                             ) : (
                                 <NavLink to={`${COMPANY_ROUTE}?page=application`}>
                                     <div className={styles.profile__sidebarSectionItem}>
+                                        <IoDocumentSharp />
                                         Подать заявку работодателя
                                     </div>
                                 </NavLink>
@@ -40,11 +42,13 @@ const Profile = observer(() => {
                         <div className={`${styles.profile__sidebarSection}`}>
                             <NavLink to="" className={styles.profile__sidebarSectionActive}>
                                 <div className={styles.profile__sidebarSectionItem}>
+                                    <IoPerson />
                                     Профиль
                                 </div>
                             </NavLink>
                             <NavLink to="">
                                 <div className={styles.profile__sidebarSectionItem}>
+                                    <IoNotificationsSharp />
                                     Уведомления
                                 </div>
                             </NavLink>
@@ -55,11 +59,13 @@ const Profile = observer(() => {
                         <div className={styles.profile__sidebarSection}>
                             <NavLink to="">
                                 <div className={styles.profile__sidebarSectionItem}>
+                                    <IoFileTrayStacked />
                                     Портфолио
                                 </div>
                             </NavLink>
                             <NavLink to="">
                                 <div className={styles.profile__sidebarSectionItem}>
+                                    <IoBarChart />
                                     Навыки
                                 </div>
                             </NavLink>
@@ -67,11 +73,13 @@ const Profile = observer(() => {
                         <div className={styles.profile__sidebarSection}>
                             <NavLink to="">
                                 <div className={styles.profile__sidebarSectionItem}>
+                                    <IoSettings />
                                     Настройки
                                 </div>
                             </NavLink>
                             <NavLink to="">
                                 <div className={styles.profile__sidebarSectionItem}>
+                                    <IoLogOut />
                                     Выйти
                                 </div>
                             </NavLink>
