@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { IoChevronBack, IoNotifications, IoPerson } from "react-icons/io5"
 import styles from "../css/overlay.module.css"
 import { NavLink, useNavigate } from "react-router";
@@ -10,6 +10,16 @@ const Overlay = observer(() => {
     const navigate = useNavigate()
     const { user } = useContext(Context)
     const [profileMenuOpen, setProfileMenuOpen] = useState(false)
+    const [ theme, setTheme ] = useState( localStorage.getItem('theme') || 'light' )
+
+    useEffect(() => {
+        document.body.className = theme
+        localStorage.setItem('theme', theme)
+    }, [ theme ])
+
+    const handleToggleTheme = () => {
+        setTheme( theme === 'light' ? 'dark' : 'light' )
+    }
 
     const toggleProfileMenu = () => {
         setProfileMenuOpen(!profileMenuOpen)
@@ -44,7 +54,7 @@ const Overlay = observer(() => {
                         </div>
                         <hr />
                         <div className={styles.overlay__profileMenuItem}><h4>Настройки</h4></div>
-                        <div className={styles.overlay__profileMenuItem}><h4>Сменить тему</h4></div>
+                        <div className={styles.overlay__profileMenuItem} onClick={handleToggleTheme}><h4>Сменить тему</h4></div>
                         <hr />
                         <div className={styles.overlay__profileMenuItem} onClick={handleLogOut}>
                             <h4>Выйти</h4>

@@ -1,0 +1,85 @@
+import { useContext, useEffect, useState } from "react"
+import { NavLink, useNavigate } from "react-router"
+import { CASES_ROUTE, COMPANY_ROUTE } from "../../utils/consts"
+import { IoBarChart, IoDocumentSharp, IoFileTrayStacked, IoLogOut, IoNotificationsSharp, IoPerson, IoSettings } from "react-icons/io5"
+import styles from './profile.module.css'
+import { findApplication } from "../../api/companyAPI"
+import { Context } from "../.."
+
+const Sidebar = () => {
+    const { user } = useContext(Context)
+    const navigate = useNavigate()
+
+    const [ hasApplication, setHasApplication ] = useState(false)
+
+    useEffect(() => {
+        findApplication(user.user.id).then(data => setHasApplication(data))
+    }, [])
+
+    return(
+        <div className={styles.profile__sidebar}>
+            <div className={styles.profile__sidebarSection}>
+                <button type="button" onClick={() => navigate(CASES_ROUTE)}>Решать кейсы</button>
+                {hasApplication ? (
+                    <div className={styles.profile__sidebarSectionItem}>
+                        <h4>Заявка уже подана</h4>
+                    </div>
+                ) : (
+                    <NavLink to={`${COMPANY_ROUTE}?page=application`}>
+                        <div className={styles.profile__sidebarSectionItem}>
+                            <IoDocumentSharp />
+                            Подать заявку работодателя
+                        </div>
+                    </NavLink>
+                )}
+            </div>
+            <div className={`${styles.profile__sidebarSection}`}>
+                <NavLink to="" className={styles.profile__sidebarSectionActive}>
+                    <div className={styles.profile__sidebarSectionItem}>
+                        <IoPerson />
+                        Профиль
+                    </div>
+                </NavLink>
+                <NavLink to="">
+                    <div className={styles.profile__sidebarSectionItem}>
+                        <IoNotificationsSharp />
+                        Уведомления
+                    </div>
+                </NavLink>
+                {/* <div className={styles.profile__sidebarSectionItem}>
+                    <NavLink to="">Мои кейсы</NavLink>
+                </div> */}
+            </div>
+            <div className={styles.profile__sidebarSection}>
+                <NavLink to="">
+                    <div className={styles.profile__sidebarSectionItem}>
+                        <IoFileTrayStacked />
+                        Портфолио
+                    </div>
+                </NavLink>
+                <NavLink to="">
+                    <div className={styles.profile__sidebarSectionItem}>
+                        <IoBarChart />
+                        Навыки
+                    </div>
+                </NavLink>
+            </div>
+            <div className={styles.profile__sidebarSection}>
+                <NavLink to="">
+                    <div className={styles.profile__sidebarSectionItem}>
+                        <IoSettings />
+                        Настройки
+                    </div>
+                </NavLink>
+                <NavLink to="">
+                    <div className={styles.profile__sidebarSectionItem}>
+                        <IoLogOut />
+                        Выйти
+                    </div>
+                </NavLink>
+            </div>
+        </div>
+    )
+}
+
+export default Sidebar
