@@ -19,8 +19,6 @@
 .env.test.local
 .env.production.local
 
-/src/routes.js
-/src/pages/admin/
 /src/img/landing.png
 
 npm-debug.log*
