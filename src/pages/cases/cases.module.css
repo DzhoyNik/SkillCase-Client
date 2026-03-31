@@ -44,7 +44,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    border: var(--border-1);
     border-radius: 25px;
 }
 
@@ -81,7 +81,7 @@
 
 .cases__search input {
     width: 100%;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    border: var(--border-1);
 }
 
 .cases__search button {
@@ -102,9 +102,9 @@
 }
 
 .cases__search button svg {
+    color: #fff;
     transform: scale(1.76);
 }
-
 
 .cases__sort {
     position: relative;
@@ -113,7 +113,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    border: var(--border-1);
 }
 
 .cases__sort::after {
@@ -166,8 +166,7 @@
     align-items: center;
     gap: 0.5rem;
     justify-content: space-between;
-    background: #e6e6e6;
-    /* background: var(--background-2); */
+    background: var(--background-2);
     border-radius: 100px;
     transition: all 0.3s ease;  
 }

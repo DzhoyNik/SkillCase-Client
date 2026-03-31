@@ -15,11 +15,14 @@ const Header = () => {
                 <button>Скачать резюме</button>
             </div>
             <div className={styles.profile__image}>
-                <div className={styles.profile__imageContent}></div>
+                <div className={styles.profile__imageContent}>
+                    <img src="http://localhost:5000/static/users/test.jpg" alt="Фото профиля" />
+                </div>
             </div>
             <div className={styles.profile__info}>
-                <h2>{user.user.lastName} {user.user.firstName}</h2>
-                <p>Frontend | FullStack developer</p>
+                <h2 className={styles.profile__infoName}>{user.user.lastName} {user.user.firstName}</h2>
+                <h4 className={styles.profile__infoSphere}>Frontend | FullStack developer</h4>
+                <p className={styles.profile__infoAbout}>О себе</p>
                 <div className={styles.profile__about}>
                     <div className={styles.profile__aboutSection}>
                         <FaMapMarkerAlt />

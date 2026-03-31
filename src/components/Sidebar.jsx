@@ -1,14 +1,15 @@
 import { useContext, useEffect, useState } from "react"
-import { NavLink, useNavigate } from "react-router"
-import { CASES_ROUTE, COMPANY_ROUTE } from "../../utils/consts"
+import { NavLink, useLocation, useNavigate } from "react-router"
+import { CASES_ROUTE, COMPANY_ROUTE, NOTIFY_ROUTE, PROFILE_ROUTE } from "../utils/consts"
 import { IoBarChart, IoDocumentSharp, IoFileTrayStacked, IoLogOut, IoNotificationsSharp, IoPerson, IoSettings } from "react-icons/io5"
-import styles from './profile.module.css'
-import { findApplication } from "../../api/companyAPI"
-import { Context } from "../.."
+import styles from '../pages/profile/profile.module.css'
+import { findApplication } from "../api/companyAPI"
+import { Context } from "../"
 
 const Sidebar = () => {
     const { user } = useContext(Context)
     const navigate = useNavigate()
+    const location = useLocation().pathname
 
     const [ hasApplication, setHasApplication ] = useState(false)
 
@@ -34,13 +35,13 @@ const Sidebar = () => {
                 )}
             </div>
             <div className={`${styles.profile__sidebarSection}`}>
-                <NavLink to="" className={styles.profile__sidebarSectionActive}>
+                <NavLink to={PROFILE_ROUTE} className={location === PROFILE_ROUTE && styles.profile__sidebarSectionActive}>
                     <div className={styles.profile__sidebarSectionItem}>
                         <IoPerson />
                         Профиль
                     </div>
                 </NavLink>
-                <NavLink to="">
+                <NavLink to={NOTIFY_ROUTE} className={location === NOTIFY_ROUTE && styles.profile__sidebarSectionActive}>
                     <div className={styles.profile__sidebarSectionItem}>
                         <IoNotificationsSharp />
                         Уведомления
