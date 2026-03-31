@@ -9,7 +9,8 @@ import { CASES_ROUTE } from "../utils/consts";
 const Overlay = observer(() => {
     const navigate = useNavigate()
     const { user } = useContext(Context)
-    const [profileMenuOpen, setProfileMenuOpen] = useState(false)
+    const [ profileNotifyOpen, setProfileNotifyOpen ] = useState(false)
+    const [ profileMenuOpen, setProfileMenuOpen ] = useState(false)
     const [ theme, setTheme ] = useState( localStorage.getItem('theme') || 'light' )
 
     useEffect(() => {
@@ -22,7 +23,13 @@ const Overlay = observer(() => {
     }
 
     const toggleProfileMenu = () => {
+        if (profileNotifyOpen) setProfileNotifyOpen(false)
         setProfileMenuOpen(!profileMenuOpen)
+    }
+
+    const toggleProfileNotify = () => {
+        if (profileMenuOpen) setProfileMenuOpen(false)
+        setProfileNotifyOpen(!profileNotifyOpen)
     }
 
     const handleLogOut = () => {
@@ -41,7 +48,7 @@ const Overlay = observer(() => {
                     </div>
                 </NavLink>
                 <div className={styles.overlay__profile}>
-                    <div className={styles.overlay__notify}>
+                    <div className={styles.overlay__notify} onClick={toggleProfileNotify}>
                         <IoNotifications />
                     </div>
                     <div className={styles.overlay__profileIcon} onClick={toggleProfileMenu}>
@@ -59,6 +66,9 @@ const Overlay = observer(() => {
                         <div className={styles.overlay__profileMenuItem} onClick={handleLogOut}>
                             <h4>Выйти</h4>
                         </div>
+                    </div>
+                    <div className={`${styles.overlay__profileNotify} ${profileNotifyOpen ? styles.overlay__profileNotifyOpen : ''}`}>
+                        
                     </div>
                 </div>
             </div>

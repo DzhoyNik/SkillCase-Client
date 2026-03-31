@@ -48,6 +48,7 @@
     background: var(--background-1);
     /* border: var(--border-1); */
     box-shadow: var(--box-shadow-1);
+    z-index: 2;
 }
 
 .overlay__notify {
@@ -58,28 +59,45 @@
     width: 90px;
 }
 
-.overlay__profileMenu {
+.overlay__profileNotify, .overlay__profileMenu {
+    user-select: none;
     position: absolute;
+    pointer-events: none;
     top: 4rem;
-    right: 0;
+    right: -10rem;
     width: 320px;
     min-height: 240px;
     padding: 0.5rem 1.5rem;
-    display: none;
+    display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    opacity: 0;
     justify-content: space-evenly;
     background: var(--background-1);
     border-radius: var(--border-radius-1);
     box-shadow: var(--box-shadow-1);
+    transition: all 0.3s ease;
+    z-index: 1;
 }
 
-.overlay__profileMenuOpen {
+.overlay__profileNotify {
+    top: -4rem;
+    right: 0rem;
+}
+
+.overlay__profileNotifyOpen, .overlay__profileMenuOpen {
+    pointer-events: auto;
     display: flex;
+    right: 0;
+    opacity: 1;
+}
+
+.overlay__profileNotifyOpen {
+    top: 4rem;
 }
 
 .overlay__profileMenuItem {
-    pointer-events: auto;
+    pointer-events: inherit;
     cursor: pointer;
     padding: 1rem;
     border-radius: var(--border-radius-1);
