@@ -9,6 +9,8 @@
     --background-process: #cacaff; 
     --background-reject: #ffdbdb; 
 
+    --background-material: rgba(0, 0, 0, 0.05); 
+
     --font-color-1: #111;
     --font-color-2: #666;
 
@@ -26,7 +28,9 @@
 
     --background-accept: #1e2c1e; 
     --background-process: #1f1f39; 
-    --background-reject: #381c1c; 
+    --background-reject: #381c1c;
+
+    --background-material: rgba(255, 255, 255, 0.05);
 
     --font-color-1: #fff;
 

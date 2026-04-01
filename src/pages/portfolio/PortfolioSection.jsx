@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router'
 import portfolio from './portfolio.module.css'
 
 const statusClass = {
@@ -26,9 +27,11 @@ const CaseDifficulty = {
     hard: '100%'
 }
 
-const PortfolioSection = ({ difficulty, title, company, description, tags, status = CaseStatus.processed }) => {
+const PortfolioSection = ({ id, difficulty, title, company, description, tags, status = CaseStatus.processed }) => {
+    const navigate = useNavigate()
+
     return(
-        <div className={portfolio.portfolio__listSection}>
+        <div className={portfolio.portfolio__listSection} onClick={() => navigate(`/solutions/${id}?page=info`)}>
             <div className={portfolio.portfolio__listSectionDifficulty}>
                 <p>Легко</p>
                 <div className={portfolio.case__difficultyProgressBar}>

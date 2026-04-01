@@ -69,6 +69,7 @@ const Portfolio = () => {
                             {tempCases.map( data => (
                                 <PortfolioSection
                                     key={ data.id }
+                                    id={ data.id }
                                     difficulty={ data.difficulty }
                                     title={ data.title }
                                     company={ data.company }
