@@ -5,6 +5,7 @@ import CaseItem from "./CaseItem"
 import { IoChevronBack, IoChevronForward, IoSearch } from "react-icons/io5"
 import Footer from "../../components/Footer"
 import { observer } from "mobx-react-lite"
+import tempCases from "./tempCases"
 
 const Cases = observer(() => {
     return(
@@ -44,7 +45,7 @@ const Cases = observer(() => {
                             </div>
                         </div>
                         <div className={styles.cases__list}>
-                            <CaseItem />
+                            {tempCases.map( item => <CaseItem key={ item.id } data={ item } /> )}
                         </div>
                     </div>
                 </div>

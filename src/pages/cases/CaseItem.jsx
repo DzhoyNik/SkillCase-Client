@@ -1,26 +1,35 @@
 import styles from "./cases.module.css"
 
-const CaseItem = () => {
+const difficulty = {
+    easy: styles.easy,
+    middle: styles.middle,
+    hard: styles.hard
+}
+
+const CaseItem = ({ data }) => {
+    console.log(data);
+
     return(
         <div className={styles.case__item}>
-            <div className={styles.case__difficulty}>
-                <h4>Легко</h4>
-                <div className={styles.case__difficultyProgressBar}>
-                    <div className={styles.case__difficultyProgress} />
+            <div className={styles.case__itemContent}>
+                <div className={styles.case__difficulty}>
+                    <h4>Легко</h4>
+                    <div className={styles.case__difficultyProgressBar}>
+                        <div className={`${styles.case__difficultyProgress} ${difficulty[data.difficulty]}`} />
+                    </div>
+                    <h4>Сложно</h4>
                 </div>
-                <h4>Сложно</h4>
-            </div>
-            <h3 className={styles.case__title}>Кейс от компании «Яндекс»</h3>
-            <p className={styles.case__description}>Реши кейс от компании «Яндекс» и получи возможность пройти стажировку в одной из лучших IT-компаний России.</p>
-            <div className={styles.case__tags}>
-                <h4 className={styles.case__tag}>Frontend</h4>
-                <h4 className={styles.case__tag}>Backend</h4>
-                <h4 className={styles.case__tag}>Frontend</h4>
-                <h4 className={styles.case__tag}>Backend</h4>
+                <h3 className={styles.case__title}>{data.title}</h3>
+                <p className={styles.case__description}>{data.description}</p>
+                <div className={styles.case__tags}>
+                    {data.tags.map( tag => (
+                        <h4 key={tag} className={styles.case__tag}>{tag}</h4>
+                    ))}
+                </div>
             </div>
             <div className={styles.case__author}>
                 <div className={styles.case__authorIcon}></div>
-                <p className={styles.case__authorText}>Author || Company</p>
+                <p className={styles.case__authorText}>{data.author}</p>
             </div>
         </div>
     )
