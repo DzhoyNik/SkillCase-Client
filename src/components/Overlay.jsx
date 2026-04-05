@@ -5,6 +5,7 @@ import { NavLink, useNavigate } from "react-router";
 import { observer } from "mobx-react-lite";
 import { Context } from "..";
 import { CASES_ROUTE } from "../utils/consts";
+import Sidebar from "./Sidebar";
 
 const Overlay = observer(() => {
     const navigate = useNavigate()
@@ -72,6 +73,7 @@ const Overlay = observer(() => {
                     </div>
                 </div>
             </div>
+            <Sidebar />
         </div>
     )
 })

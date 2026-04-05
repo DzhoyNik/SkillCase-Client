@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
 .wrapper {
+    display: flex;
+    justify-content: end;
     min-height: 100vh;
     padding: 0 100px;
     padding-top: 104px;
@@ -8,7 +10,5 @@
 }
 
 .wrapper__content {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 1rem;
+    width: 75%;
 }

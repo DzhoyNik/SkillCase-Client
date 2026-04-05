@@ -6,7 +6,7 @@
 
 .status p {
     width: 100%;
-    color: #4a4aee;
+    color: var(--color-process);
     padding: 0.5rem 1rem;
     text-align: center;
     border-radius: 8px;
@@ -16,11 +16,11 @@
 }
 
 .status__accepted p {
-    color: #0edf12;
+    color: var(--color-accept);
     background: var(--background-accept);
 }
 
 .status__rejected p {
-    color: #ed2929;
+    color: var(--color-reject);
     background: var(--background-reject);
 }

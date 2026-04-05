@@ -1,5 +1,6 @@
 import Admin from "./pages/admin/Admin"
 import Auth from "./pages/auth/Auth"
+import Case from "./pages/cases/Case"
 import Cases from "./pages/cases/Cases"
 import Company from "./pages/company/Company"
 import Landing from "./pages/landing/Landing"
@@ -7,10 +8,11 @@ import Notify from "./pages/notify/Notify"
 import Portfolio from "./pages/portfolio/Portfolio"
 import Profile from "./pages/profile/Profile"
 import Solution from "./pages/solution/Solution"
-import { ADMIN_ROUTE, AUTH_ROUTE, CASES_ROUTE, COMPANY_ROUTE, LANDING_ROUTE, NOTIFY_ROUTE, PORTFOLIO_ROUTE, PROFILE_ROUTE, SOLUTION_ROUTE } from "./utils/consts"
+import { ADMIN_ROUTE, AUTH_ROUTE, CASE_ROUTE, CASES_ROUTE, COMPANY_ROUTE, LANDING_ROUTE, NOTIFY_ROUTE, PORTFOLIO_ROUTE, PROFILE_ROUTE, SOLUTION_ROUTE } from "./utils/consts"
 
 export const authRoutes = [
     { path: CASES_ROUTE, Component: Cases },
+    { path: CASE_ROUTE, Component: Case },
     { path: PROFILE_ROUTE, Component: Profile },
     { path: COMPANY_ROUTE, Component: Company },
     { path: NOTIFY_ROUTE, Component: Notify },

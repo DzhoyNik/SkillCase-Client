@@ -112,7 +112,7 @@
 }
 
 .portfolio__casesSectionStatus p {
-    color: #4a4aee;
+    color: var(--color-process);
     padding: 0.5rem 1rem;
     text-align: center;
     border-radius: 8px;
@@ -122,12 +122,12 @@
 }
 
 .portfolio__casesStatusAccepted p {
-    color: #0edf12;
+    color: var(--color-accept);
     background: var(--background-accept);
 }
 
 .portfolio__casesStatusRejected p {
-    color: #ed2929;
+    color: var(--color-reject);
     background: var(--background-reject);
 }
 

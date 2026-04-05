@@ -1,10 +1,6 @@
 import { useNavigate } from 'react-router'
 import portfolio from './portfolio.module.css'
-
-const statusClass = {
-    accept: portfolio.portfolio__casesStatusAccepted,
-    reject: portfolio.portfolio__casesStatusRejected
-}
+import Status from '../../components/Status'
 
 const CaseStatus = {
     accepted: {
@@ -41,12 +37,7 @@ const PortfolioSection = ({ id, difficulty, title, company, description, tags, s
             </div>
             <div className={portfolio.portfolio__listSectionHeader}>
                 <h3 className={portfolio.portfolio__listSectionTitle}>{title}</h3>
-                <div className={`
-                    ${portfolio.portfolio__casesSectionStatus}
-                    ${statusClass[status.style]}
-                `}>
-                    <p>{status.title}</p>
-                </div>
+                <Status status={status} />
             </div>
             <p className={portfolio.portfolio__listSectionDescription}>{description}</p>
             <div className={portfolio.portfolio__tags}>

@@ -1,9 +1,23 @@
 @charset "UTF-8";
 
 :root {
-    --background-1: #ffffff;
+    --color-accept: #6CEF52; 
+    --color-process: #FD8B45; 
+    --color-reject: #EB588E;
+
+    --background-1: #E6E6F4;
     --background-2: #cfcfcf;
-    --background-3: linear-gradient(45deg, #435CFF 0%, #2E2ED9 100%);
+    --background-3: #435CFF;
+
+    --background-sidebar: linear-gradient(90deg, #E6E6F4 12%, #FFFFFF 70%);
+    --background-sidebar-active: #fff;
+
+    --background-level-bar: rgba(0, 0, 0, 0.2);
+    --background-level-progress: #fff;
+
+    --background-section: linear-gradient(90deg, #FFFFFF, #E6E6F4);
+    --background-block: #fff;
+    --background-block-2: #435CFF;
 
     --background-accept: #ddffdb; 
     --background-process: #cacaff; 
@@ -23,16 +37,26 @@
 }
 
 .dark {
-    --background-1: #1A1A22;
+    --background-1: #16161B;
     --background-2: #36364C;
 
-    --background-accept: #1e2c1e; 
-    --background-process: #1f1f39; 
-    --background-reject: #381c1c;
+    --background-sidebar: linear-gradient(90deg, #16161B 12%, #26262F 70%);
+    --background-sidebar-active: linear-gradient(90deg, #303038, #87879e00);
+    
+    --background-section: linear-gradient(90deg, #26262F, #16161B);
+    --background-block: #26262F;
+    --background-block-2: #2E2E38;
+
+    --background-accept: #1E4D32; 
+    --background-process: #4D301E; 
+    --background-reject: #4D1E2F;
 
     --background-material: rgba(255, 255, 255, 0.05);
 
+    --background-footer: #121216;
+
     --font-color-1: #fff;
+    --font-color-2: #87879E;
 
     --border-1: 1px solid rgba(255, 255, 255, 0.2);
 
