@@ -7,6 +7,7 @@ import { caseMock } from '../../temp/tempCase'
 import { NavLink } from "react-router"
 import { CASES_ROUTE } from "../../utils/consts"
 import { IoIosArrowBack } from "react-icons/io"
+import Footer from "../../components/Footer"
 
 const Case = () => {
     const { caseId } = useParams()
