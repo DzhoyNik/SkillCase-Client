@@ -1,4 +1,6 @@
+import { useNavigate } from "react-router"
 import styles from "./cases.module.css"
+import { CASES_ROUTE } from "../../utils/consts"
 
 const difficulty = {
     easy: styles.easy,
@@ -7,10 +9,14 @@ const difficulty = {
 }
 
 const CaseItem = ({ data }) => {
-    console.log(data);
+    const navigate = useNavigate()
+
+    const handleNavigate = ( id ) => {
+        navigate(`${CASES_ROUTE}/${id}`)
+    }
 
     return(
-        <div className={styles.case__item}>
+        <div className={styles.case__item} onClick={() => handleNavigate(data.id)}>
             <div className={styles.case__itemContent}>
                 <div className={styles.case__difficulty}>
                     <h4>Легко</h4>

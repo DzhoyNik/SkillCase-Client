@@ -7,7 +7,7 @@ import { Context } from "..";
 import { CASES_ROUTE } from "../utils/consts";
 import Sidebar from "./Sidebar";
 
-const Overlay = observer(() => {
+const Overlay = observer(({ sidebar = true }) => {
     const navigate = useNavigate()
     const { user } = useContext(Context)
     const [ profileNotifyOpen, setProfileNotifyOpen ] = useState(false)
@@ -73,7 +73,7 @@ const Overlay = observer(() => {
                     </div>
                 </div>
             </div>
-            <Sidebar />
+            {sidebar && <Sidebar />}
         </div>
     )
 })

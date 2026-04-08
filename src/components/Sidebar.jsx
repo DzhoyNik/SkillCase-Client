@@ -13,19 +13,12 @@ const Sidebar = () => {
 
     const [ hasApplication, setHasApplication ] = useState(false)
 
-    const checkPage = () => {
-        if (location === CASES_ROUTE) return false
-        return true
-    }
-
     useEffect(() => {
         findApplication(user.user.id).then(data => setHasApplication(data))
     }, [])
 
-    console.log(checkPage())
-
     return(
-        checkPage() && <div className={styles.sidebar}>
+        <div className={styles.sidebar}>
             <div className={styles.sidebar__section}>
                 <button type="button" onClick={() => navigate(CASES_ROUTE)}>Решать кейсы</button>
                 {hasApplication ? (

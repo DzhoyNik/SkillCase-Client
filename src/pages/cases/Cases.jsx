@@ -11,7 +11,7 @@ const Cases = observer(() => {
     return(
         <>
             <div className={styles.cases}>
-                <Overlay />
+                <Overlay sidebar={false} />
                 <h2 className={styles.cases__title}>Каталог кейсов</h2>
                 <p className={styles.cases__description}>Выбирай практические задачи от компаний, решай в своём темпе и добавляй результат в портфолио.</p>
                 <div className={styles.cases__content}>
