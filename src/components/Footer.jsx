@@ -1,6 +1,7 @@
 import { NavLink } from "react-router"
 import styles from "../css/footer.module.css"
 import { FaTelegramPlane } from "react-icons/fa"
+import { DOCS_ROUTE } from '../utils/consts'
 
 const Footer = () => {
     return(
@@ -9,17 +10,17 @@ const Footer = () => {
                 <div className={styles.footer__section}>
                     <h3>skillcase@gmail.com</h3>
                     <p>По вопросам и предложениям</p>
-                    <div className={styles.footer_telegramm}>
-                        <NavLink>
+                    <NavLink>
+                        <div className={styles.footer_telegramm}>
                             <FaTelegramPlane />
-                        </NavLink>
-                    </div>
+                        </div>
+                    </NavLink>
                 </div>
                 <div className={styles.footer__section}>
                     <h3>Документы</h3>
-                    <NavLink>Условия использования</NavLink>
-                    <NavLink>Политика конфиденциальности</NavLink>
-                    <NavLink>Политика cookie</NavLink>
+                    <NavLink to={`${DOCS_ROUTE}?page=terms`}>Условия использования</NavLink>
+                    <NavLink to={`${DOCS_ROUTE}?page=privacy`}>Политика конфиденциальности</NavLink>
+                    <NavLink to={`${DOCS_ROUTE}?page=cookies`}>Политика cookie</NavLink>
                 </div>
                 <div className={styles.footer__section}>
                     <h3>Платформа</h3>
@@ -36,9 +37,8 @@ const Footer = () => {
             <div className={styles.footer__copy}>
                 <p>&copy; SkillCase, 2026. Все права защищены.</p>
             </div>
-        </div>
-        
-)
+        </div>        
+    )
 }
 
 export default Footer

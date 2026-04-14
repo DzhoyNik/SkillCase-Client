@@ -50,6 +50,10 @@
     font-weight: 500;
 }
 
+.footer__section a:hover {
+    color: var(--font-color-1);
+}
+
 .footer__logo {
     display: flex;
     align-items: center;
