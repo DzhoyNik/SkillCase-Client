@@ -8,13 +8,13 @@ export const pages = [
         'title': 'Пользователи'
     },
     {
-        'url': 'roles',
-        'icon': <MdAdminPanelSettings />,
-        'title': 'Роли'
-    },
-    {
         'url': 'applications',
         'icon': <MdAssignment />,
         'title': 'Заявки'
+    },
+    {
+        'url': 'roles',
+        'icon': <MdAdminPanelSettings />,
+        'title': 'Роли'
     }
 ]
