@@ -155,7 +155,7 @@
     width: 100%;
     padding: 0.5rem 1rem;
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1.5fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
     gap: 1rem;
 }
 
@@ -170,7 +170,7 @@
     display: grid;
     padding: 0.5rem 1rem;
     align-items: center;
-    grid-template-columns: 2fr 1fr 1fr 1.5fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr;
     transition: all 0.3s ease;
     background: var(--background-block);
     border-radius: var(--border-radius-1);

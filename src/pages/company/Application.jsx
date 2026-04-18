@@ -45,7 +45,7 @@ const Application = observer(() => {
     
     return(
         <div className={styles.company__application}>
-            <Overlay />
+            <Overlay sidebar={false} />
             <div className={styles.company__applicationContent}>
                 <div className={styles.company__applicationContentTitle}>
                     <h2>Заявка на статус работодателя</h2>

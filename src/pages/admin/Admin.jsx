@@ -29,11 +29,11 @@ const Admin = observer(() => {
 
     return(
         <div className={styles.admin}>
-            <Overlay />
+            <Overlay sidebar={false} />
             { page === null ? (
                 <>
                     <Navigation />
-                    <div className={styles.admin__statistic}></div>
+                    {/* <div className={styles.admin__statistic}></div> */}
                 </>
             ) : (
                 <div className={styles.admin__content}>

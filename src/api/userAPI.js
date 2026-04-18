@@ -23,3 +23,8 @@ export const getAll = async () => {
     const { data } = await $host.get('api/v1/user/')
     return data
 }
+
+export const changeRole = async ( payload ) => {
+    const { data } = await $authHost.put('api/v1/user/role', payload)
+    return data 
+}
