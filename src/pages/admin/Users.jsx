@@ -80,13 +80,13 @@ const Users = () => {
             <div className={styles.admin__list}>
                 <div className={styles.admin__title}>
                     <input type="checkbox" />
-                    <h4>ID</h4>
-                    <h4>Ф.И.О</h4>
-                    <h4>Почта</h4>
-                    <h4>Роль</h4>
-                    <h4>Дата регистрации</h4>
-                    <h4>Последний вход</h4>
-                    <h4>Действия</h4>
+                    <p>ID</p>
+                    <p>Ф.И.О</p>
+                    <p>Почта</p>
+                    <p>Роль</p>
+                    <p>Дата регистрации</p>
+                    <p>Последний вход</p>
+                    <p>Действия</p>
                 </div>
                 {users.map(data => (
                     <div key={data.id} className={styles.admin__section}>
