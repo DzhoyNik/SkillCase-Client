@@ -1,8 +1,6 @@
 import { useState } from "react"
 
-const Sort = ({ styles }) => {
-    const [ active, setActive ] = useState('all')
-
+const Sort = ({ active, setActive, styles }) => {
     return(
         <div className={styles.portfolio__sort}>
             <div className={`${styles.portfolio__sortSection} ${ active === 'all' && styles.portfolio__sortSectionActive }`} onClick={() => setActive('all')}>

@@ -16,7 +16,7 @@
     transition: all 0.3s ease;
 }
 
-.status__accepted p {
+.status__access p {
     color: var(--color-accept);
     background: var(--background-accept);
 }

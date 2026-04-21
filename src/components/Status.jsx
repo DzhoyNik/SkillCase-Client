@@ -2,7 +2,7 @@ import styles from '../css/status.module.css'
 
 const Status = ({ status }) => {
     const statusClass = {
-        accept: styles.status__accepted,
+        access: styles.status__access,
         reject: styles.status__rejected
     }
 
