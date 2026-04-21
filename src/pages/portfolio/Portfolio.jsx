@@ -2,6 +2,7 @@ import Overlay from "../../components/Overlay"
 import wrapper from "../../css/profile.module.css"
 import styles from './portfolio.module.css'
 import PortfolioSection from "./PortfolioSection"
+import Sort from "./Sort"
 import { tempCases } from "./tempCases"
 
 const CaseStatus = {
@@ -49,20 +50,7 @@ const Portfolio = () => {
                                 <h1>15</h1>
                             </div>
                         </div>
-                        <div className={styles.portfolio__sort}>
-                            <div className={`${styles.portfolio__sortSection} ${styles.portfolio__sortSectionActive}`}>
-                                <h3>Все</h3>
-                            </div>
-                            <div className={styles.portfolio__sortSection}>
-                                <h3>Принятые</h3>
-                            </div>
-                            <div className={styles.portfolio__sortSection}>
-                                <h3>В процессе</h3>
-                            </div>
-                            <div className={styles.portfolio__sortSection}>
-                                <h3>Отклоненные</h3>
-                            </div>
-                        </div>
+                        <Sort styles={styles} />
                         <div className={styles.portfolio__list}>
                             {tempCases.map( data => (
                                 <PortfolioSection

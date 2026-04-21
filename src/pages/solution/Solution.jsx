@@ -4,13 +4,15 @@ import styles from '../../css/profile.module.css'
 import solution from './solution.module.css'
 import status from '../../css/status.module.css'
 import MaterialTypes from "./MaterialTypes"
-import { NavLink, useSearchParams } from "react-router"
+import { NavLink, useNavigate, useSearchParams } from "react-router"
 import tempSolutionData from "./tempData"
 import { IoArrowBack } from "react-icons/io5"
+import { PORTFOLIO_ROUTE } from "../../utils/consts"
 
 const tempTypes = [ 'document', 'spreadsheet', 'presentation', 'image', 'archive', 'source', 'design', 'link', 'video' ]
 
 const Solution = () => {
+    const navigate = useNavigate()
     const [ searchParams ] = useSearchParams()
     const page = searchParams.get('page')
     const _case = tempSolutionData.case
@@ -22,10 +24,10 @@ const Solution = () => {
             <Overlay />
             <div className={styles.wrapper}>
                 <div className={styles.wrapper__content}>
-                    <div className={styles.profile__sidebar}>
-                        <button type="button"><IoArrowBack /> Назад</button>
-                    </div>
                     <div className={solution.solution}>
+                        <div className={solution.solution__back}>
+                            <button type="button" onClick={() => navigate(PORTFOLIO_ROUTE)}><IoArrowBack /> Назад</button>
+                        </div>
                         <div className={solution.solution__section}>
                             <div className={solution.solution__sectionHeader}>
                                 <div className={solution.solution__sectionHeaderContent}>
@@ -63,7 +65,7 @@ const Info = ({ data }) => {
         <>
             <div className={solution.solution__section} style={{ gridArea: '1 / 1 / 2 / 6' }}>
                 <h3>Требования</h3>
-                <pre><p>{data.info.requirements}</p></pre>
+                <p>{data.info.requirements}</p>
             </div>
             <div className={solution.solution__section} style={{ gridArea: '2 / 1 / 3 / 6' }}>
                 <h3>Материалы</h3>

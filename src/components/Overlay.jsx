@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
-import { IoChevronBack, IoNotifications, IoPerson } from "react-icons/io5"
+import { IoChevronBack, IoLogOut, IoNotifications, IoPerson, IoSettings } from "react-icons/io5"
 import styles from "../css/overlay.module.css"
 import { NavLink, useNavigate } from "react-router";
 import { observer } from "mobx-react-lite";
 import { Context } from "..";
 import { CASES_ROUTE } from "../utils/consts";
 import Sidebar from "./Sidebar";
+import { MdDarkMode } from "react-icons/md";
 
 const Overlay = observer(({ sidebar = true }) => {
     const navigate = useNavigate()
@@ -58,19 +59,25 @@ const Overlay = observer(({ sidebar = true }) => {
                     </div>
                     <div className={`${styles.overlay__profileMenu} ${profileMenuOpen ? styles.overlay__profileMenuOpen : ''}`}>
                         <div className={styles.overlay__profileMenuItem} onClick={() => navigate('/profile')}>
+                            <IoPerson />
                             <h4>Профиль</h4>
                         </div>
                         <hr />
-                        <div className={styles.overlay__profileMenuItem}><h4>Настройки</h4></div>
-                        <div className={styles.overlay__profileMenuItem} onClick={handleToggleTheme}><h4>Сменить тему</h4></div>
+                        <div className={styles.overlay__profileMenuItem}>
+                            <IoSettings />
+                            <h4>Настройки</h4>
+                        </div>
+                        <div className={styles.overlay__profileMenuItem} onClick={handleToggleTheme}>
+                            <MdDarkMode />
+                            <h4>Сменить тему</h4>
+                        </div>
                         <hr />
                         <div className={styles.overlay__profileMenuItem} onClick={handleLogOut}>
-                            <h4>Выйти</h4>
+                            <IoLogOut style={{ color: "#ed3e3e" }} />
+                            <h4 style={{ color: "#ed3e3e" }}>Выйти</h4>
                         </div>
                     </div>
-                    <div className={`${styles.overlay__profileNotify} ${profileNotifyOpen ? styles.overlay__profileNotifyOpen : ''}`}>
-                        
-                    </div>
+                    <div className={`${styles.overlay__profileNotify} ${profileNotifyOpen ? styles.overlay__profileNotifyOpen : ''}`}></div>
                 </div>
             </div>
             {sidebar && <Sidebar />}

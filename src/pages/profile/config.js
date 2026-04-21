@@ -10,12 +10,10 @@ const getProgressPercent = ( currentXP, grade ) => {
 }
 
 const getGrade = ( level, currentXP, cases ) => {
-    const progress = getProgressPercent( currentXP, { min: getXP(level - 1), max: getXP(level) } )
-
     return {
         level: {
             level: level,
-            progress: progress,
+            progress: getProgressPercent( currentXP, { min: getXP(level - 1), max: getXP(level) } ),
             min: getXP(level - 1),
             max: getXP(level)
         },

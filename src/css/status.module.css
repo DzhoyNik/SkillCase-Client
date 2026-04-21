@@ -9,6 +9,7 @@
     color: var(--color-process);
     padding: 0.5rem 1rem;
     text-align: center;
+    white-space: nowrap;
     border-radius: 8px;
     font-weight: 600;
     background: var(--background-process);

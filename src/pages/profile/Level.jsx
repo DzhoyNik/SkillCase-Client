@@ -5,7 +5,7 @@ const Level = ({ data, styles }) => {
     const [ width, setWidth ] = useState(0)
 
     useEffect(() => {
-        setWidth(data?.progress)
+        setWidth(data?.progress || 0)
     }, [])
 
     console.log(data)

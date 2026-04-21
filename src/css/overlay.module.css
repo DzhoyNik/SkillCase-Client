@@ -49,8 +49,7 @@
     justify-content: space-evenly;
     border-radius: 100px;
     background: var(--background-block);
-    /* border: var(--border-1); */
-    /* box-shadow: var(--box-shadow-1); */
+    box-shadow: var(--box-shadow-1);
     z-index: 10;
 }
 
@@ -101,6 +100,9 @@
 
 .overlay__profileMenuItem {
     pointer-events: inherit;
+    display: flex;
+    gap: 0.65rem;
+    align-items: center;
     cursor: pointer;
     padding: 1rem;
     border-radius: var(--border-radius-1);
@@ -108,6 +110,10 @@
 
 .overlay__profileMenuItem:hover {
     background: rgba(0, 0, 255, 0.1);
+}
+
+.overlay__profileMenuItem svg {
+    transform: scale(1.2);
 }
 
 .overlay__profileMenu hr {

@@ -65,8 +65,8 @@ const Sidebar = observer(() => {
                         Настройки
                     </div>
                 </NavLink>
-                <NavLink to="" style={{ color: "#ed3e3e" }}>
-                    <div className={styles.sidebar__sectionItem}>
+                <NavLink to="">
+                    <div className={styles.sidebar__sectionItem} style={{ color: "#ed3e3e" }}>
                         <IoLogOut style={{ color: "#ed3e3e" }} />
                         Выйти
                     </div>
@@ -132,12 +132,12 @@ const Specialist = ({ location }) => {
                     Портфолио
                 </div>
             </NavLink>
-            <NavLink to="">
+            {/* <NavLink to="">
                 <div className={styles.sidebar__sectionItem}>
                     <IoBarChart />
                     Навыки
                 </div>
-            </NavLink>
+            </NavLink> */}
         </>
     )
 }
