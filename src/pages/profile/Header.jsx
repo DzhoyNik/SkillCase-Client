@@ -20,9 +20,7 @@ const Header = observer(() => {
     useEffect(() => {
         setGrade(getGrade( level, currentXP, cases ))
     }, [])
-
-    console.log(grade)
-
+    
     return(
         <div className={`${styles.profile__mainSection} ${styles.profile__header}`}>
             <div className={`${styles.profile__headerSection} ${styles.profile__userCard}`}>

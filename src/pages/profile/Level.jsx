@@ -8,8 +8,6 @@ const Level = ({ data, styles }) => {
         setWidth(data?.progress || 0)
     }, [])
 
-    console.log(data)
-
     return(
         <div className={styles.profile__level}>
             <div className={styles.profile__info}>

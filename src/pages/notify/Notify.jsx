@@ -3,6 +3,7 @@ import wrapper from "../../css/profile.module.css"
 import styles from './notify.module.css'
 import NotifySection from "./NotifySection"
 import { tempNotifications } from '../../temp/tempNotifications'
+import Footer from "../../components/Footer"
 
 const Notify = () => {
     return(
@@ -33,6 +34,7 @@ const Notify = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     )
 }

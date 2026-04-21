@@ -5,6 +5,7 @@ import styles from './portfolio.module.css'
 import PortfolioSection from "./PortfolioSection"
 import Sort from "./Sort"
 import { tempCases as cases } from "./tempCases"
+import Footer from "../../components/Footer"
 
 const CaseStatus = {
     accepted: {
@@ -75,6 +76,7 @@ const Portfolio = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </>
     )
 }

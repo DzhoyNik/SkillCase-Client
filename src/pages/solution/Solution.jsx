@@ -17,8 +17,6 @@ const Solution = () => {
     const page = searchParams.get('page')
     const _case = tempSolutionData.case
 
-    console.log(tempSolutionData)
-
     return(
         <>
             <Overlay />

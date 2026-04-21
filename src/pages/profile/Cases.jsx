@@ -5,7 +5,7 @@ import { casesDataTemp } from "../../temp/casesDataTemp";
 const CaseStatus = {
     accepted: {
         title: 'Принят',
-        style: 'accept'
+        style: 'access'
     },
     processed: {
         title: 'В процессе',
