@@ -9,7 +9,7 @@ import Footer from "../../components/Footer"
 
 const CaseStatus = {
     accepted: {
-        title: 'Принят',
+        title: 'Успешен',
         style: 'access'
     },
     processed: {

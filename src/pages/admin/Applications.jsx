@@ -13,11 +13,11 @@ const Applications = () => {
     const [ isOpen, setIsOpen ] = useState(false)
 
     useEffect(() => {
-        setApplications(applicationsMock)
-        // getAllApplications().then(data => setApplications(data))
+        // setApplications(applicationsMock)
+        getAllApplications().then(data => setApplications(data.applications))
     }, [])
 
-    console.log(selectedApplication)
+    console.log(applications[selectedApplication])
 
     const statuses = {
         1: {
@@ -78,7 +78,7 @@ const Applications = () => {
                             />
                         ))}
                     </div>
-                { isOpen && <Application data={applications[selectedApplication - 1]} /> }
+                { isOpen && <Application data={applications[selectedApplication]} /> }
                 </div>
             </div>
         </>
@@ -110,14 +110,14 @@ const ListItem = ({ data, status, isOpen, onClick, selectedApplication, setSelec
     return(
         <div className={`${styles.applications__section} ${active && styles.active}`} onClick={handleView} style={{ gridTemplateColumns: style.grid }}>
             <p>{data.id}</p>
-            <p>{data.company.name}</p>
-            <p>{data.contact.fullName}</p>
-            { !isOpen && <p className={styles.applications__sectionEmail}>{data.contact.email}</p> }
+            <p>{data.title}</p>
+            <p>{data.userId}</p>
+            { !isOpen && <p className={styles.applications__sectionEmail}>{data.email}</p> }
             { !isOpen && <p>{getDate(data.createdAt)}</p> }
-            <p className={styles.applications__sectionStatus} style={{
+            {/* <p className={styles.applications__sectionStatus} style={{
                 color: status.color,
                 background: status.background
-            }}>{status.name}</p>
+            }}>{status.name}</p> */}
             <div className={styles.applications__sectionActions}>
                 <button type="button">{active ? <FaEye /> : <FaEyeSlash />}</button>
                 <button type="button"><FaCheck /></button>

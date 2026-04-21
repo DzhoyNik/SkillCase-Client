@@ -18,12 +18,12 @@ export const authRoutes = [
     { path: COMPANY_ROUTE, Component: Company },
     { path: NOTIFY_ROUTE, Component: Notify },
     { path: PORTFOLIO_ROUTE, Component: Portfolio },
-    { path: SOLUTION_ROUTE, Component: Solution },
-    { path: DOCS_ROUTE, Component: Docs }
+    { path: SOLUTION_ROUTE, Component: Solution }
 ]
 
 export const publicRoutes = [
     { path: LANDING_ROUTE, Component: Landing },
     { path: AUTH_ROUTE, Component: Auth },
-    { path: ADMIN_ROUTE, Component: Admin }
+    { path: ADMIN_ROUTE, Component: Admin },
+    { path: DOCS_ROUTE, Component: Docs }
 ]

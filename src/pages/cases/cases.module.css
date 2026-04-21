@@ -44,7 +44,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    border: var(--border-1);
+    background: var(--background-block);
     border-radius: 25px;
 }
 
@@ -81,7 +81,7 @@
 
 .cases__search input {
     width: 100%;
-    border: var(--border-1);
+    background: var(--background-block);
 }
 
 .cases__search button {
@@ -113,7 +113,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: var(--border-1);
+    background: var(--background-block);
 }
 
 .cases__sort::after {

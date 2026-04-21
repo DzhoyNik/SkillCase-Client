@@ -83,10 +83,13 @@
 }
 
 .header__content {
-    color: #fff;
     padding: 2rem;
     background: var(--background-3);
     border-radius: var(--border-radius-1);
+}
+
+.header__content > * {
+    color: #fff;
 }
 
 .header__image {
@@ -145,8 +148,17 @@
 }
 
 .works__content h1 {
+    color: #fff;
     text-align: center;
     margin-bottom: 2rem;
+}
+
+.works__content h2 {
+    color: #fff;
+}
+
+.works__content p {
+    color: #fff;
 }
 
 .works__steps {

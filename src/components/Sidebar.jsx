@@ -82,15 +82,15 @@ const Application = ( hasApplication ) => {
             {hasApplication ? (
                 <NavLink to={`${COMPANY_ROUTE}?page=application`}>
                     <div className={styles.sidebar__sectionItem}>
-                        <TiDocumentText />
-                        Показать заявку
+                        <IoDocumentSharp />
+                        Стать работодателем
                     </div>
                 </NavLink>
             ) : (
                 <NavLink to={`${COMPANY_ROUTE}?page=application`}>
                     <div className={styles.sidebar__sectionItem}>
-                        <IoDocumentSharp />
-                        Подать заявку работодателя
+                        <TiDocumentText />
+                        Показать заявку
                     </div>
                 </NavLink>
             )}
