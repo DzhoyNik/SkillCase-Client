@@ -73,7 +73,20 @@
     border-radius: var(--border-radius-1);
 }
 
+.profile__info {
+    user-select: none;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    transform: scale(2);
+}
+
+.profile__info svg {
+    color: var(--font-color-2);
+}
+
 .profile__level {
+    position: relative;
     padding: 2rem 3rem;
     display: flex;
     align-items: center;
@@ -99,7 +112,6 @@
 }
 
 .profile__levelProgress {
-    width: 25%;
     height: 100%;
     background: var(--background-level-progress);
     border-radius: 100px;

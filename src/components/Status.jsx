@@ -1,8 +1,6 @@
 import styles from '../css/status.module.css'
 
 const Status = ({ status }) => {
-    console.log(status)
-
     const statusClass = {
         accept: styles.status__accepted,
         reject: styles.status__rejected
