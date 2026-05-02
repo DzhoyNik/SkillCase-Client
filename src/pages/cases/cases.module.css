@@ -39,17 +39,30 @@
 }
 
 .cases__sidebarSection {
-    cursor: pointer;
-    padding: 1rem;
+    /* padding: 1rem; */
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    flex-direction: column;
     background: var(--background-block);
     border-radius: 25px;
 }
 
-.cases__sidebarSection svg {
+.cases__sidebarHeader {
+    user-select: none;
+    padding: 1rem;
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cases__sidebarHeader svg {
     transform: scale(1.5);
+}
+
+.cases__active svg {
+    transform: scale(1.5) rotateZ(90deg);
 }
 
 .cases__main {
@@ -148,7 +161,6 @@
     min-height: 360px;
     padding: 1rem;
     background: var(--background-block);
-    box-shadow: var(--box-shadow-1);
     border-radius: var(--border-radius-1);
     transition: all 0.3s ease;
 }
@@ -268,6 +280,63 @@
 .cases__paginationList {
     display: flex;
     gap: 0.5rem;
+}
+
+/* Popup section */
+
+.popup {
+    user-select: none;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.popup__section {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+    padding-left: 1.5rem;
+    background: var(--background-block-2);
+    /* border-radius: 8px; */
+    border-radius: var(--border-radius-1);
+}
+
+.popup__section:hover {
+    background: var(--background-2);
+}
+
+.popup__sectionMark {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0.65rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup__sectionMarkBody {
+    width: 8px;
+    height: 24px;
+    background: var(--background-2);
+    border-radius: 100px;
+}
+
+.popup__section:hover .popup__sectionMarkBody {
+    background: var(--font-color-1);
+}
+
+.popup__active {
+    background: var(--background-3) !important;
+}
+
+.popup__section input {
+    width: auto;
 }
 
 /* Case */
