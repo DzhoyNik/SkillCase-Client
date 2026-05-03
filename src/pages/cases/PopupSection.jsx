@@ -4,7 +4,6 @@ import styles from './cases.module.css'
 const PopupSection = observer(({ filter, handleToggleFilter, options }) => {
     if (options.length === 0) return <p>Нет параметров</p>
 
-
     console.log(filter)
     return(
         <div className={styles.popup}>

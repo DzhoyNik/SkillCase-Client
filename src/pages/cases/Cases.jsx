@@ -55,62 +55,63 @@ const Cases = observer(() => {
                 <p className={styles.cases__description}>Выбирай практические задачи от компаний, решай в своём темпе и добавляй результат в портфолио.</p>
                 <div className={styles.cases__content}>
                     <div className={styles.cases__sidebar}>
-                        <div className={styles.cases__sidebarSection}>
-                            <div className={`${styles.cases__sidebarHeader} ${isView.difficulty && styles.cases__active}`} onClick={() => handleToggleView('difficulty')}>
-                                <IoChevronForward />
-                                <h3>Уровень сложности</h3>
+                        <div className={styles.cases__sidebarList}>
+                            <div className={styles.cases__sidebarSection}>
+                                <div className={`${styles.cases__sidebarHeader} ${isView.difficulty && styles.cases__active}`} onClick={() => handleToggleView('difficulty')}>
+                                    <IoChevronForward />
+                                    <h3>Уровень сложности</h3>
+                                </div>
+                                {isView.difficulty && <PopupSection
+                                    filter={filter}
+                                    handleToggleFilter={handleToggleFilter}
+                                    options={[
+                                        { type: 'difficulty', value: 'easy', title: 'Легкий' },
+                                        { type: 'difficulty', value: 'middle', title: 'Средний' },
+                                        { type: 'difficulty', value: 'hard', title: 'Сложный' },
+                                    ]}
+                                />}
                             </div>
-                            <PopupSection
-                                filter={filter}
-                                handleToggleFilter={handleToggleFilter}
-                                options={[
-                                    { type: 'difficulty', value: 'easy', title: 'Легкий' },
-                                    { type: 'difficulty', value: 'middle', title: 'Средний' },
-                                    { type: 'difficulty', value: 'hard', title: 'Сложный' },
-                                ]}
-                            />
-                            {/* { isView.difficulty && <PopupDifficulty view={isView.difficulty} filter={filter.difficulty} handleToggleFilter={handleToggleFilter} styles={styles} /> } */}
-                        </div>
-                        <div className={styles.cases__sidebarSection}>
-                            <div className={`${styles.cases__sidebarHeader} ${isView.skills && styles.cases__active}`} onClick={() => handleToggleView('skills')}>
-                                <IoChevronForward />
-                                <h3>Навыки</h3>
+                            <div className={styles.cases__sidebarSection}>
+                                <div className={`${styles.cases__sidebarHeader} ${isView.skills && styles.cases__active}`} onClick={() => handleToggleView('skills')}>
+                                    <IoChevronForward />
+                                    <h3>Навыки</h3>
+                                </div>
+                                {isView.skills && <PopupSection
+                                    filter={filter}
+                                    handleToggleFilter={handleToggleFilter}
+                                    options={[
+                                        { type: 'skills', value: 'figma', title: 'Figma' },
+                                        { type: 'skills', value: 'cjm', title: 'CJM' },
+                                        { type: 'skills', value: 'react', title: 'React' },
+                                        { type: 'skills', value: 'rest', title: 'Rest' },
+                                        { type: 'skills', value: 'sql', title: 'SQL' },
+                                        { type: 'skills', value: 'sheets', title: 'Sheets' },
+                                        { type: 'skills', value: 'python', title: 'Python' },
+                                    ]}
+                                />}
                             </div>
-                            <PopupSection
-                                filter={filter}
-                                handleToggleFilter={handleToggleFilter}
-                                options={[
-                                    { type: 'skills', value: 'figma', title: 'Figma' },
-                                    { type: 'skills', value: 'cjm', title: 'CJM' },
-                                    { type: 'skills', value: 'react', title: 'React' },
-                                    { type: 'skills', value: 'rest', title: 'Rest' },
-                                    { type: 'skills', value: 'sql', title: 'SQL' },
-                                    { type: 'skills', value: 'sheets', title: 'Sheets' },
-                                    { type: 'skills', value: 'python', title: 'Python' },
-                                ]}
-                            />
-                            {/* { isView.skills && <PopupSkills view={isView.skills} filter={filter.skills} handleToggleFilter={handleToggleFilter} styles={styles} /> } */}
-                        </div>
-                        <div className={styles.cases__sidebarSection}>
-                            <div className={`${styles.cases__sidebarHeader} ${isView.direction && styles.cases__active}`} onClick={() => handleToggleView('direction')}>
-                                <IoChevronForward />
-                                <h3>Направления</h3>
+                            <div className={styles.cases__sidebarSection}>
+                                <div className={`${styles.cases__sidebarHeader} ${isView.direction && styles.cases__active}`} onClick={() => handleToggleView('direction')}>
+                                    <IoChevronForward />
+                                    <h3>Направления</h3>
+                                </div>
+                                {isView.direction && <PopupSection
+                                    filter={filter}
+                                    handleToggleFilter={handleToggleFilter}
+                                    options={[
+                                        { type: 'direction', value: 'design', title: 'UI/UX дизайн' },
+                                        { type: 'direction', value: 'frontend', title: 'Frontend' },
+                                        { type: 'direction', value: 'backend', title: 'Backend' },
+                                        { type: 'direction', value: 'analytics', title: 'Data/BI аналитика' },
+                                        { type: 'direction', value: 'growth', title: 'Маркетинг / Growth' },
+                                    ]}
+                                />}
                             </div>
-                            <PopupSection
-                                filter={filter}
-                                handleToggleFilter={handleToggleFilter}
-                                options={[
-                                    { type: 'direction', value: 'design', title: 'UI/UX дизайн' },
-                                    { type: 'direction', value: 'frontend', title: 'Frontend' },
-                                    { type: 'direction', value: 'backend', title: 'Backend' },
-                                    { type: 'direction', value: 'analytics', title: 'Data/BI аналитика' },
-                                    { type: 'direction', value: 'growth', title: 'Маркетинг / Growth' },
-                                ]}
-                            />
-                            {/* { isView.direction && <PopupDirection view={isView.direction} filter={filter.direction} handleToggleFilter={handleToggleFilter} styles={styles} /> } */}
                         </div>
-                        <button type="button">Применить фильтры</button>
-                        <button type="button" onClick={handleResetFilter}>Сбросить</button>
+                        <div className={styles.cases__sidebarActions}>
+                            <button type="button">Применить фильтры</button>
+                            <button type="button" onClick={handleResetFilter}>Сбросить</button>
+                        </div>
                     </div>
                     <div className={styles.cases__main}>
                         <div className={styles.cases__toolbar}>
