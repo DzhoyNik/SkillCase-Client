@@ -63,7 +63,7 @@ const Overlay = observer(({ sidebar = true }) => {
                             <h4>Профиль</h4>
                         </div>
                         <hr />
-                        <div className={styles.overlay__profileMenuItem}>
+                        <div className={styles.overlay__profileMenuItem} onClick={() => navigate('/settings')}>
                             <IoSettings />
                             <h4>Настройки</h4>
                         </div>

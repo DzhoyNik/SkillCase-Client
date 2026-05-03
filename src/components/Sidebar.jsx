@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import { NavLink, useLocation, useNavigate, useSearchParams } from "react-router"
-import { ADMIN_ROUTE, CASES_ROUTE, COMPANY_ROUTE, NOTIFY_ROUTE, PORTFOLIO_ROUTE, PROFILE_ROUTE } from "../utils/consts"
+import { ADMIN_ROUTE, CASES_ROUTE, COMPANY_ROUTE, NOTIFY_ROUTE, PORTFOLIO_ROUTE, PROFILE_ROUTE, SETTINGS_ROUTE } from "../utils/consts"
 import { IoBarChart, IoBriefcaseSharp, IoDocumentSharp, IoFileTrayStacked, IoLogOut, IoNotificationsSharp, IoPerson, IoSettings } from "react-icons/io5"
 import styles from '../css/sidebar.module.css'
 import { findApplication } from "../api/companyAPI"
@@ -59,7 +59,7 @@ const Sidebar = observer(() => {
                 <Specialist location={location} />
             </div>
             <div className={styles.sidebar__section}>
-                <NavLink to="">
+                <NavLink to={SETTINGS_ROUTE} className={location === SETTINGS_ROUTE && styles.sidebar__sectionActive}>
                     <div className={styles.sidebar__sectionItem}>
                         <IoSettings />
                         Настройки

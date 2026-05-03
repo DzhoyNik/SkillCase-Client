@@ -35,10 +35,6 @@ const Portfolio = () => {
             <div className={wrapper.wrapper}>
                 <div className={wrapper.wrapper__content}>
                     <div className={styles.portfolio}>
-                        <div className={styles.portfolio__header}>
-                            <h2>Портфолио</h2>
-                            <p>Все кейсы</p>
-                        </div>
                         <div className={styles.portfolio__statistics}>
                             <div className={styles.portfolio__statisticsSection}>
                                 <h2>Всего</h2>
