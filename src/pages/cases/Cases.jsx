@@ -1,5 +1,4 @@
 import styles from "./cases.module.css"
-import footer from "../landing/landing.module.css"
 import Overlay from "../../components/Overlay"
 import CaseItem from "./CaseItem"
 import { IoChevronBack, IoChevronForward, IoSearch } from "react-icons/io5"

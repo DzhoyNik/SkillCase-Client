@@ -27,7 +27,6 @@ const SignUp = observer(() => {
 
     return(
         <div className={style.auth__signUp}>
-            <h1>Регистрация</h1>
             <div className={style.auth__bodySection}>
                 <input type="text" placeholder="Фамилию" value={ lastName } onChange={ e => setLastName(e.target.value) } />
                 <input type="text" placeholder="Имя" value={ firstName } onChange={ e => setFirstName(e.target.value) } />

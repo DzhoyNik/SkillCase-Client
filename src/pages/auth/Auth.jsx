@@ -1,4 +1,4 @@
-import style from "./auth.module.css"
+import styles from "./auth.module.css"
 import { SignIn, SignUp, Choice, CompanyApplication } from "./index"
 import { NavLink, useSearchParams } from "react-router"
 
@@ -19,16 +19,21 @@ const Auth = () => {
     const Component = typeAuth[page] || typeAuth[DEFAULT_PAGE]
 
     return(
-        <div className={style.auth}>
-            <div className={style.logo}>
-                <div className={style.logo__icon}></div>
+        <div className={styles.auth}>
+            <div className={styles.logo}>
+                <div className={styles.logo__icon}></div>
                 <h1>SkillCase</h1>
             </div>
-            <div className={style.auth__body}>
-                <div className={style.auth__back}>
-                    <NavLink to='/'><button type="button">На главную</button></NavLink>
+            <div className={styles.auth__body}>
+                <div className={styles.auth__nav}>
+                    <NavLink to={'/auth?page=signUp'} className={`${styles.auth__navSection} ${page === 'signUp' && styles.active}`}>
+                        <h4>Регистрация</h4>
+                    </NavLink>
+                    <NavLink to={'/auth?page=signIn'} className={`${styles.auth__navSection} ${page === 'signIn' && styles.active}`}>
+                        <h4>Авторизация</h4>
+                    </NavLink>
                 </div>
-                <Component /> 
+                <Component />
             </div>
         </div>
     )

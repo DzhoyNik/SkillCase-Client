@@ -26,7 +26,6 @@ const SignIn = observer(() => {
     
     return(
         <div className={style.auth__signIn}>
-            <h1>Авторизация</h1>
             <div className={style.auth__bodySection}>
                 <div className={style.auth__bodyInput}>
                     <IoPerson />
@@ -38,8 +37,7 @@ const SignIn = observer(() => {
                 </div>
             </div>
             <button type="button" onClick={handleSignIn}>Войти</button>
-            <NavLink to="/auth?page=signUp">Создать учетную запись</NavLink>
-            <NavLink to="/auth?page=forgot">Забыли пароль?</NavLink>
+            <NavLink to="/auth?page=forgot">Забыли пароль? Восстановить</NavLink>
         </div>
     )
 })
