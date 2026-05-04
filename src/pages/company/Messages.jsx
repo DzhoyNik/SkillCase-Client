@@ -5,31 +5,23 @@ import styles from './company.module.css'
 
 const Messages = () => {
     return(
-        <>
-            <Overlay />
-            <div className={wrapper.wrapper}>
-                <div className={wrapper.wrapper__content}>
-                    <div className={styles.messages}>
-                        <h2>Сообщения</h2>
-                        <div className={styles.messages__sort}>
-                            <div className={styles.messages__sortSection}>
-                                <h4>Выбрать кейс</h4>
-                            </div>
-                            <div className={styles.messages__sortSection}>
-                                <h4>Сортировать</h4>
-                            </div>
-                        </div>
-                        <div className={styles.messages__list}>
-                            <Message />
-                            <Message />
-                            <Message />
-                            <Message />
-                        </div>
-                    </div>
+        <div className={styles.messages}>
+            <h2>Сообщения</h2>
+            <div className={styles.messages__sort}>
+                <div className={styles.messages__sortSection}>
+                    <h4>Выбрать кейс</h4>
+                </div>
+                <div className={styles.messages__sortSection}>
+                    <h4>Сортировать</h4>
                 </div>
             </div>
-            <Footer />
-        </>
+            <div className={styles.messages__list}>
+                <Message />
+                <Message />
+                <Message />
+                <Message />
+            </div>
+        </div>
     )
 }
 

@@ -38,7 +38,7 @@ const Sidebar = observer(() => {
                     </NavLink>
                 )}
             </div>
-            {userRole === 4 && (
+            {userRole !== 1 && (
                 <div className={`${styles.sidebar__section}`}>
                     <Company searchParams={searchParams} />
                 </div>

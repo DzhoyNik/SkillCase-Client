@@ -40,8 +40,8 @@ const CaseSection = ({ data, status = CaseStatus.processed }) => {
             <p>{data.company}</p>
             <p>{data.date}</p>
             <Status status={data.status} />
-            <p>Легкий</p>
-            <p>{data.date}</p>
+            <p>{data.difficulty}</p>
+            <p>{data.score}</p>
         </div>
     )
 }

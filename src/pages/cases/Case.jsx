@@ -97,10 +97,6 @@ const Case = () => {
                             <h4>15 - 20 часов</h4>
                         </div>
                         <div className={styles.case__shortInfoSection}>
-                            <p>Деадлайн</p>
-                            <h4>20 дней</h4>
-                        </div>
-                        <div className={styles.case__shortInfoSection}>
                             <p>Статус</p>
                             <h4>Можно начать</h4>
                         </div>

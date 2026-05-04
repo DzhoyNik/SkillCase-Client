@@ -222,3 +222,45 @@
     display: flex;
     gap: 0.5rem;
 }
+
+/* Cases */
+
+.cases__toolbar {
+    padding: 1rem;
+    background: var(--background-section);
+    border-radius: var(--border-radius-1);
+}
+
+.cases__toolbar button {
+    color: var(--font-color-2);
+    background: var(--background-1);
+}
+
+.cases__toolbar button:hover {
+    color: var(--font-color-1);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Cases */
+
+.create {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.create__section {
+    padding: 1rem;
+    background: var(--background-section);
+    border-radius: var(--border-radius-1);
+}
+
+.create button {
+    color: var(--font-color-2);
+    background: var(--background-1);
+}
+
+.create button:hover {
+    color: var(--font-color-1);
+    background: rgba(255, 255, 255, 0.02);
+}

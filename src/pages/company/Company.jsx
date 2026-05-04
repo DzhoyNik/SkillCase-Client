@@ -5,6 +5,10 @@ import styles from './company.module.css'
 import Info from "./Info"
 import Messages from "./Messages"
 import Cases from "./Cases"
+import Create from "./Create"
+import Overlay from "../../components/Overlay"
+import Footer from "../../components/Footer"
+import wrapper from '../../css/profile.module.css'
 
 const Company = observer(() => {
     const [ searchParams ] = useSearchParams()
@@ -14,14 +18,21 @@ const Company = observer(() => {
         info: Info,
         messages: Messages,
         cases: Cases,
-        application: Application
+        application: Application,
+        create: Create
     }
 
     const Component = pages[currentPage]
 
     return(
         <div className={styles.company}>
-            <Component />
+            <Overlay />
+            <div className={wrapper.wrapper}>
+                <div className={wrapper.wrapper__content}>
+                    <Component />
+                </div>
+            </div>
+            <Footer />
         </div>
     )
 })

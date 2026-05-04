@@ -5,10 +5,13 @@ import { IoChevronBack, IoChevronForward, IoSearch } from "react-icons/io5"
 import Footer from "../../components/Footer"
 import { observer } from "mobx-react-lite"
 import tempCases from "./tempCases"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import PopupSection from "./PopupSection"
+import { getAllCases } from "../../api/casesAPI"
 
 const Cases = observer(() => {
+    const [ cases, setCases ] = useState([])
+
     const [ isView, setIsView ] = useState({
         difficulty: false,
         skills: false,
@@ -45,7 +48,16 @@ const Cases = observer(() => {
         })
     }
 
-    console.log(filter)
+    useEffect(() => {
+        try {
+            getAllCases().then(data => {
+                console.log(data)
+                setCases(data)
+            })
+        } catch (e) {
+            console.log(e);
+        }
+    }, [])
 
     return(
         <>
@@ -127,7 +139,7 @@ const Cases = observer(() => {
                             </div>
                         </div>
                         <div className={styles.cases__list}>
-                            {tempCases.map( item => <CaseItem key={ item.id } data={ item } /> )}
+                            {Array.isArray(cases) && cases.map( item => <CaseItem key={item.id} data={item} /> ) || <NoCases />}
                         </div>
                     </div>
                 </div>
@@ -153,5 +165,13 @@ const Cases = observer(() => {
         </>
     )
 })
+
+const NoCases = () => {
+    return(
+        <>
+            <h2>В данный момент кейсов нет</h2>
+        </>
+    )
+}
 
 export default Cases

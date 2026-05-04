@@ -24,3 +24,8 @@ export const getApplication = async ( applicationId ) => {
     const { data } = await $authHost.get(`api/v1/company/${applicationId}`)
     return data
 }
+
+export const createCase = async ( payload ) => {
+    const { data } = await $authHost.post('api/v1/case/', payload)
+    return data
+}

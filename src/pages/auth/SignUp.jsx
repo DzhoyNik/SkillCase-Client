@@ -11,12 +11,13 @@ const SignUp = observer(() => {
     const [ lastName, setLastName ] = useState('')
     const [ firstName, setFirstName ] = useState('')
     const [ patronymic, setPatronymic ] = useState('')
+    const [ login, setLogin ] = useState('')
     const [ email, setEmail ] = useState('')
     const [ password, setPassword ] = useState('')
 
     const handleSignUp = async () => {
         try {
-            const data = await signUp( lastName, firstName, patronymic, email, password )
+            const data = await signUp( lastName, firstName, patronymic, login, email, password )
             user.setUser(data)
             user.setIsAuth(true)
             navigate("/auth?page=choice")
@@ -33,6 +34,7 @@ const SignUp = observer(() => {
                 <input type="text" placeholder="Отчество" value={ patronymic } onChange={ e => setPatronymic(e.target.value) } />
             </div>
             <div className={style.auth__bodySection}>
+                <input type="text" placeholder="Логин" value={ login } onChange={ e => setLogin(e.target.value) } />
                 <input type="email" placeholder="Почта" value={ email } onChange={ e => setEmail(e.target.value) } />
                 <input type="password" placeholder="Пароль" value={ password } onChange={ e => setPassword(e.target.value) } />
             </div>
