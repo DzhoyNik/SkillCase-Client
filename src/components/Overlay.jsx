@@ -10,7 +10,7 @@ import { MdDarkMode } from "react-icons/md";
 
 const Overlay = observer(({ sidebar = true }) => {
     const navigate = useNavigate()
-    const { user } = useContext(Context)
+    const { user, company } = useContext(Context)
     const [ profileNotifyOpen, setProfileNotifyOpen ] = useState(false)
     const [ profileMenuOpen, setProfileMenuOpen ] = useState(false)
     const [ theme, setTheme ] = useState( localStorage.getItem('theme') || 'light' )
@@ -37,6 +37,7 @@ const Overlay = observer(({ sidebar = true }) => {
     const handleLogOut = () => {
         user.setUser({})
         user.setIsAuth(false)
+        company.setCompany({})
         localStorage.removeItem('token')
     }
 

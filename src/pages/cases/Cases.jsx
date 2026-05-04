@@ -8,6 +8,7 @@ import tempCases from "./tempCases"
 import { useEffect, useState } from "react"
 import PopupSection from "./PopupSection"
 import { getAllCases } from "../../api/casesAPI"
+import Case from "../../components/Case"
 
 const Cases = observer(() => {
     const [ cases, setCases ] = useState([])
@@ -139,7 +140,7 @@ const Cases = observer(() => {
                             </div>
                         </div>
                         <div className={styles.cases__list}>
-                            {Array.isArray(cases) && cases.map( item => <CaseItem key={item.id} data={item} /> ) || <NoCases />}
+                            {cases.length > 0 ? cases.map( item => <Case key={item.id} data={item} /> ) : <NoCases />}
                         </div>
                     </div>
                 </div>
@@ -169,7 +170,7 @@ const Cases = observer(() => {
 const NoCases = () => {
     return(
         <>
-            <h2>В данный момент кейсов нет</h2>
+            <h2 style={{ gridArea: '1 / 1 / 2 / 3', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>В данный момент кейсов нет</h2>
         </>
     )
 }

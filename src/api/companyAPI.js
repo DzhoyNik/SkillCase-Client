@@ -10,6 +10,21 @@ export const findApplication = async ( userId ) => {
     return data
 }
 
+export const acceptApplication = async ( appId ) => {
+    const { data } = await $authHost.post(`api/v1/company/${appId}`)
+    return data
+}
+
+export const rejectApplication = async ( appId ) => {
+    const { data } = await $authHost.delete(`api/v1/company/${appId}`)
+    return data
+}
+
+export const getCompanyInfo = async ( userId ) => {
+    const { data } = await $authHost.get(`api/v1/company/info/${userId}`)
+    return data
+}
+
 export const getAllRoles = async () => {
     const { data } = await $authHost.get('api/v1/user/roles')
     return data
@@ -27,5 +42,15 @@ export const getApplication = async ( applicationId ) => {
 
 export const createCase = async ( payload ) => {
     const { data } = await $authHost.post('api/v1/case/', payload)
+    return data
+}
+
+export const getAllCases = async ( companyId ) => {
+    const { data } = await $authHost.get(`api/v1/company/${companyId}/cases`)
+    return data
+}
+
+export const checkCompany = async ( userId ) => {
+    const { data } = await $authHost.get(`api/v1/company/check/${userId}`)
     return data
 }

@@ -5,9 +5,10 @@ import { observer } from "mobx-react-lite";
 import { useContext, useEffect, useState } from "react";
 import { Context } from ".";
 import { check } from "./api/userAPI";
+import { checkCompany } from "./api/companyAPI";
 
 const App = observer(() =>  {
-  const { user } = useContext(Context)
+  const { user, company } = useContext(Context)
   const [ loading, setLoading ] = useState(true)
 
   useEffect(() => {
@@ -15,9 +16,13 @@ const App = observer(() =>  {
       .then(data => {
         user.setUser(data)
         user.setIsAuth(true)
+
+        checkCompany(data.id)
+          .then(data => company.setCompany(data.company))
+          .catch(e => console.log(e))
       })
       .catch (e => console.log(e))
-      .finally( () => setLoading(false) )
+      .finally( () => setLoading(false) )  
   }, [])
 
   if (loading) {

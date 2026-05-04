@@ -12,7 +12,7 @@ import { HiOfficeBuilding } from "react-icons/hi"
 import { MdSpaceDashboard } from "react-icons/md"
 
 const Sidebar = observer(() => {
-    const { user } = useContext(Context)
+    const { user, company } = useContext(Context)
     const userRole = user.user.role
     const navigate = useNavigate()
     const location = useLocation().pathname
@@ -23,6 +23,13 @@ const Sidebar = observer(() => {
     useEffect(() => {
         findApplication(user.user.id).then(data => setHasApplication(data))
     }, [])
+
+    const handleLogOut = () => {
+        user.setUser({})
+        user.setIsAuth(false)
+        company.setCompany({})
+        localStorage.removeItem('token')
+    }
 
     return(
         <div className={styles.sidebar}>
@@ -65,7 +72,7 @@ const Sidebar = observer(() => {
                         Настройки
                     </div>
                 </NavLink>
-                <NavLink to="">
+                <NavLink onClick={handleLogOut}>
                     <div className={styles.sidebar__sectionItem} style={{ color: "#ed3e3e" }}>
                         <IoLogOut style={{ color: "#ed3e3e" }} />
                         Выйти

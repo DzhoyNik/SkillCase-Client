@@ -312,8 +312,16 @@
 .case__authorIcon {
     width: 45px;
     height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
     border-radius: 100px;
     background: var(--background-2);
+}
+
+.case__authorIcon img {
+    width: 100%;
 }
 
 .cases__pagination {

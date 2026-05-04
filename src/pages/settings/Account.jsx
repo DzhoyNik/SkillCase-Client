@@ -2,6 +2,7 @@ import { observer } from 'mobx-react-lite'
 import styles from './settings.module.css'
 import { useContext, useState } from 'react'
 import { Context } from '../..'
+import logo from '../../assets/user.png'
 
 const Account = observer(() => {
     const { user } = useContext(Context)
@@ -15,7 +16,9 @@ const Account = observer(() => {
         <>
             <div className={styles.settings__section}>
                 <div className={styles.account}>
-                    <div className={styles.account__avatar}></div>
+                    <div className={styles.account__avatar}>
+                        <img src={logo} alt="Аватар" />
+                    </div>
                     <div className={styles.account__info}>
                         <h3>Фотография профиля</h3>
                         <p>Выберите файл JPG или PNG до 5 мб</p>

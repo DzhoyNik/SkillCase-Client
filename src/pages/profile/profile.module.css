@@ -30,13 +30,16 @@
 .profile__image {
     width: 200px;
     height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: var(--background-2);
     border-radius: 100%;
     overflow: hidden;
 }
 
 .profile__image img {
-    width: 100%;
+    width: 105%;
 }
 
 .profile__userCard {

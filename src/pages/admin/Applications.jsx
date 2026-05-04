@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getAllApplications } from "../../api/companyAPI"
+import { acceptApplication, getAllApplications } from "../../api/companyAPI"
 import styles from "./admin.module.css"
 import { useNavigate } from "react-router"
 import { ADMIN_ROUTE } from "../../utils/consts"
@@ -13,11 +13,16 @@ const Applications = () => {
     const [ isOpen, setIsOpen ] = useState(false)
 
     useEffect(() => {
-        // setApplications(applicationsMock)
         getAllApplications().then(data => setApplications(data.applications))
     }, [])
 
-    console.log(applications[selectedApplication])
+    const handleAccept = ( id ) => {
+        acceptApplication(id).then(data => console.log(data))
+    }
+
+    const handleReject = ( id ) => {
+        console.log(`Reject: ${id}`)
+    }
 
     const statuses = {
         1: {
@@ -69,7 +74,8 @@ const Applications = () => {
                                 data={data}
                                 status={statuses[data.statusId]}
                                 isOpen={isOpen}
-                                onClick={() => setIsOpen(!isOpen)}
+                                handleAccept={() => handleAccept(data.id)}
+                                handleReject={() => handleReject(data.id)}
                                 selectedApplication={selectedApplication}
                                 setSelectedApplication={setSelectedApplication}
                                 style={{
@@ -78,14 +84,14 @@ const Applications = () => {
                             />
                         ))}
                     </div>
-                { isOpen && <Application data={applications[selectedApplication]} /> }
+                {/* { isOpen && <Application data={applications[selectedApplication]} /> } */}
                 </div>
             </div>
         </>
     )
 }
 
-const ListItem = ({ data, status, isOpen, onClick, selectedApplication, setSelectedApplication, style }) => {
+const ListItem = ({ data, status, isOpen, handleAccept, handleReject, selectedApplication, setSelectedApplication, style }) => {
     const active = data.id === selectedApplication
 
     const getDate = ( date ) => {
@@ -98,17 +104,17 @@ const ListItem = ({ data, status, isOpen, onClick, selectedApplication, setSelec
         })
     }
 
-    const handleView = () => {
-        onClick()
-        if (!selectedApplication) {
-            setSelectedApplication(data.id)
-        } else {
-            setSelectedApplication(null)
-        }
-    }
+    // const handleView = () => {
+    //     onClick()
+    //     if (!selectedApplication) {
+    //         setSelectedApplication(data.id)
+    //     } else {
+    //         setSelectedApplication(null)
+    //     }
+    // }
 
     return(
-        <div className={`${styles.applications__section} ${active && styles.active}`} onClick={handleView} style={{ gridTemplateColumns: style.grid }}>
+        <div className={`${styles.applications__section} ${active && styles.active}`} style={{ gridTemplateColumns: style.grid }}>
             <p>{data.id}</p>
             <p>{data.title}</p>
             <p>{data.userId}</p>
@@ -120,8 +126,8 @@ const ListItem = ({ data, status, isOpen, onClick, selectedApplication, setSelec
             }}>{status.name}</p> */}
             <div className={styles.applications__sectionActions}>
                 <button type="button">{active ? <FaEye /> : <FaEyeSlash />}</button>
-                <button type="button"><FaCheck /></button>
-                <button type="button"><IoClose /></button>
+                <button type="button" onClick={handleAccept}><FaCheck /></button>
+                <button type="button" onClick={handleReject}><IoClose /></button>
             </div>
         </div>
     )

@@ -113,6 +113,10 @@
     justify-content: center;
 }
 
+.info__logoImage img {
+    width: 105%;
+}
+
 .info__headerContent {
     display: flex;
     flex-direction: column;
@@ -133,14 +137,18 @@
     border-radius: var(--border-radius-1);
 }
 
-.info__statsIcon {
+.info__statsMetric {
     width: 60px;
     height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: red;
     border-radius: 100px;
+}
+
+.info__statsText {
+    display: flex;
+    align-items: center;
 }
 
 .info__content {
@@ -170,9 +178,23 @@
 }
 
 .info__activity, .info__contact {
+    display: flex;
+    flex-direction: column;
     padding: 1rem;
     background: var(--background-block);
     border-radius: var(--border-radius-1);
+}
+
+.info__contact {
+    gap: 0.5rem;
+}
+
+.info__contactSection {
+    padding-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-top: var(--border-1);
 }
 
 /* Messages */
@@ -250,9 +272,42 @@
 }
 
 .create__section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     padding: 1rem;
     background: var(--background-section);
     border-radius: var(--border-radius-1);
+}
+
+.cases {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cases__content {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.create__tags {
+    cursor: pointer;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--border-1);
+    border-radius: var(--border-radius-1);
+}
+
+.create__tags h4 {
+    color: var(--font-color-2);
+}
+
+.create__tags:hover h4 {
+    color: var(--font-color-1);
 }
 
 .create button {
