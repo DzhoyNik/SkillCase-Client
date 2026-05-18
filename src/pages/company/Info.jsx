@@ -75,9 +75,9 @@ const Info = observer(() => {
                     </div>
                 </div>
                 <div className={styles.info__contentSection}>
-                    <div className={styles.info__activity}>
+                    {/* <div className={styles.info__activity}>
                         <h3>Активность компании</h3>
-                    </div>
+                    </div> */}
                     <div className={styles.info__contact}>
                         <h3>Контакты</h3>
                         <div className={styles.info__contactSection}>

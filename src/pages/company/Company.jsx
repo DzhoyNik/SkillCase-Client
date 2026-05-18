@@ -9,6 +9,8 @@ import Create from "./Create"
 import Overlay from "../../components/Overlay"
 import Footer from "../../components/Footer"
 import wrapper from '../../css/profile.module.css'
+import Case from "./Case"
+import Edit from "./Edit"
 
 const Company = observer(() => {
     const [ searchParams ] = useSearchParams()
@@ -18,8 +20,10 @@ const Company = observer(() => {
         info: Info,
         messages: Messages,
         cases: Cases,
+        case: Case,
         application: Application,
-        create: Create
+        create: Create,
+        edit: Edit
     }
 
     const Component = pages[currentPage]

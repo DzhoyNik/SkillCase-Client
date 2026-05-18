@@ -228,6 +228,7 @@
     width: 100%;
     min-height: 360px;
     padding: 1rem;
+    overflow: hidden;
     background: var(--background-block);
     border-radius: var(--border-radius-1);
     transition: all 0.3s ease;
@@ -238,6 +239,15 @@
     flex-direction: column;
     gap: 1rem;
     flex: 1;
+}
+
+.case__itemContent h3, .case__itemContent p {
+    width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .case__author {

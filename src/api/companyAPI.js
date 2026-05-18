@@ -45,8 +45,28 @@ export const createCase = async ( payload ) => {
     return data
 }
 
+export const updateCase = async ( caseId, payload ) => {
+    const { data } = await $authHost.put(`api/v1/case/${caseId}`, payload)
+    return data
+}
+
+export const deleteCase = async ( caseId ) => {
+    const { data } = await $authHost.delete(`api/v1/company/case/${caseId}`)
+    return data
+}
+
 export const getAllCases = async ( companyId ) => {
     const { data } = await $authHost.get(`api/v1/company/${companyId}/cases`)
+    return data
+}
+
+export const getCase = async ( companyId, caseId ) => {
+    const { data } = await $authHost.get(`api/v1/company/${companyId}/case/${caseId}`)
+    return data
+}
+
+export const getAllTags = async () => {
+    const { data } = await $authHost.get('api/v1/tag/')
     return data
 }
 

@@ -1,12 +1,14 @@
 import { useContext, useEffect, useState } from 'react'
 import styles from './company.module.css'
-import { createCase, getAllTags } from '../../api/companyAPI'
+import { createCase, getAllTags, getCase, updateCase } from '../../api/companyAPI'
 import { Context } from '../..'
-import { useNavigate } from 'react-router'
+import { useNavigate, useSearchParams } from 'react-router'
 import { COMPANY_ROUTE } from '../../utils/consts'
 
-const Create = () => {
+const Edit = () => {
     const navigate = useNavigate()
+    const [ searchParams ] = useSearchParams()
+    const caseId = searchParams.get('case')
     const { company } = useContext(Context)
     const [ tags, setTags ] = useState([])
     const [ selectedTags, setSelectedTags ] = useState([])
@@ -22,6 +24,10 @@ const Create = () => {
 
     useEffect(() => {
         getAllTags().then( data => setTags(data) )
+        getCase(company.company.id, caseId).then(data => {
+            setPayload(data.item)
+            data.tags.map(item => handleTagSelect(item.tag))
+        })
     }, [])
 
     const handleTagSelect = ( tag ) => {
@@ -35,12 +41,11 @@ const Create = () => {
         setSelectedTags( prev => prev.filter( item => item.id !== tagId ) )
     }
 
-    const handleCreate = async () => {
-        if ( !payload.title || !payload.description ) return
-
+    const handleEdit = async () => {
         try {
             const tagIds = selectedTags.map( tag => tag.id )
-            createCase({...payload, tags: tagIds}).then( () => navigate(`${COMPANY_ROUTE}?page=cases`) )
+            updateCase(caseId, {...payload, tags: tagIds}).then( () => navigate(-1) )
+            // updateCase(caseId, {...payload, tags: tagIds}).then( e => console.log(e) )
         } catch (e) {
             console.log(e)
         }
@@ -103,9 +108,10 @@ const Create = () => {
                     </div>
                 </div>
             </div>
-            <button type="button" onClick={handleCreate}>Создать</button>
+            <button type="button" onClick={handleEdit}>Сохранить изменения</button>
+            <button type="button" onClick={() => navigate(-1)}>Отмена</button>
         </div>
     )
 }
 
-export default Create
+export default Edit

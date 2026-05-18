@@ -114,12 +114,12 @@ const Company = ({ searchParams }) => {
                     Компания
                 </div>
             </NavLink>
-            <NavLink to={`${COMPANY_ROUTE}?page=messages`} className={searchParams.get('page') === `messages` && styles.sidebar__sectionActive}>
+            {/* <NavLink to={`${COMPANY_ROUTE}?page=messages`} className={searchParams.get('page') === `messages` && styles.sidebar__sectionActive}>
                 <div className={styles.sidebar__sectionItem}>
                     <FaMessage />
                     Сообщения
                 </div>
-            </NavLink>
+            </NavLink> */}
             <NavLink to={`${COMPANY_ROUTE}?page=cases`} className={searchParams.get('page') === `cases` && styles.sidebar__sectionActive}>
                 <div className={styles.sidebar__sectionItem}>
                     <IoBriefcaseSharp />

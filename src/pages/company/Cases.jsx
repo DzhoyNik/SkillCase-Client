@@ -9,6 +9,7 @@ import { Context } from "../.."
 import { getAllCases } from "../../api/companyAPI"
 import { observer } from "mobx-react-lite"
 import Case from "../../components/Case"
+import { getTagsCase } from "../../api/casesAPI"
 
 const Cases = observer(() => {
     const { company } = useContext(Context)
@@ -16,10 +17,31 @@ const Cases = observer(() => {
     const [ cases, setCases ] = useState([])
 
     useEffect(() => {
-        getAllCases(company.company.id)
-            .then( data => setCases(data) )
-            .catch ( e => console.log(e) )
-    }, [])
+        if (!company?.company?.id) return
+
+        const fetchCases = async () => {
+            try {
+                const data = await getAllCases(company.company.id).catch( e => console.log(e) )
+
+                const casesWithTags = await Promise.all(
+                    data.map( async item => {
+                        const tags = await getTagsCase(item.id)
+
+                        return {
+                            ...item,
+                            tags
+                        }
+                    })
+                )
+
+                setCases(casesWithTags)
+            } catch (e) {
+                console.log(e)
+            }
+        }
+
+        fetchCases()
+    }, [company?.company?.id])
 
     return(
         <div className={styles.cases}>
@@ -27,7 +49,9 @@ const Cases = observer(() => {
                 <button type="button" onClick={() => navigate(`${COMPANY_ROUTE}?page=create`)}>Создать кейс</button>
             </div>
             <div className={styles.cases__content}>
-                {cases.length > 0 ? cases.map( item => <Case key={item.id} data={item} company={company?.company.name} /> ) : <NoCases />}
+                { cases.length > 0
+                    ? cases.map( item => <Case key={item.id} data={item} company={company?.company.name} tags={item.tags} onClick={() => navigate(`${COMPANY_ROUTE}?page=case&case=${item.id}`)} /> ) : <NoCases />
+                }
             </div>
         </div>
     )
