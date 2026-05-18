@@ -1,0 +1,224 @@
+@charset "UTF-8";
+
+.solution {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.solution__back button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.solution__back button svg {
+    color: #fff;
+}
+
+.solution__section {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow: hidden;
+    background: var(--background-section);
+    border-radius: var(--border-radius-1);
+}
+
+.solution__section input {
+    border: var(--border-1)
+}
+
+.solution__sectionHeader {
+    display: flex;
+}
+
+.solution__sectionHeaderContent {
+    width: 100%;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.solution__sectionDifficulty span {
+    padding: 0.4rem 0.6rem;
+    color: #27fa18;
+    background: var(--background-accept);
+    display: flex;
+    border-radius: 4px;
+}
+
+.solution__sectionDifficulty .medium {
+    color: #fab218;
+    background: rgba(128, 92, 0, 0.3);
+}
+
+.solution__sectionDifficulty .hard {
+    color: #ff2e2e;
+    background: var(--background-reject);
+}
+
+.solution__sectionStatus {
+    width: 13%;
+}
+
+.solution__toolBar {
+    display: flex;
+    gap: 1rem;
+}
+
+.solution__toolBar a {
+    color: #747474;
+}
+
+.solution__active {
+    color: #435CFF !important;
+}
+
+.solution__chapter {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-auto-rows: auto;
+    gap: 1rem;
+}
+
+.solution__materials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.solution__material {
+    cursor: pointer;
+    position: relative;
+    width: 120px;
+    height: 120px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    background: var(--background-2);
+    border-radius: var(--border-radius-1);
+    transition: all 0.3s ease;
+}
+
+.solution__material:hover {
+    transform: scale(1.1);
+}
+
+.solution__material span {
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    padding: 1.5rem;
+    display: flex;
+    background: var(--background-material);
+    border-radius: 100px;
+}
+
+.solution__material svg {
+    color: inherit;
+    transform: scale(1.8);
+}
+
+.chat {
+    grid-area: 1 / 6 / 3 / 9;
+    max-height: 600px;
+    background: var(--background-section-inverse);
+}
+
+.chat__header {
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--background-block);
+    border-radius: var(--border-radius-1);
+}
+
+.chat__headerImage {
+    width: 60px;
+    height: 60px;
+    background: var(--background-2);
+    border-radius: 100px;
+}
+
+.chat__content {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: scroll;
+    background: rgba(0, 0, 0, 0.1);
+    /* border: var(--border-1); */
+    background: var(--background-block);
+    border-radius: var(--border-radius-1);
+}
+
+.chat__content::-webkit-scrollbar {
+    width: 12px;
+    background: var(--background-1);
+}
+
+.chat__content::-webkit-scrollbar-thumb {
+    background: var(--background-3);
+    border-radius: 100px;
+}
+
+.chat__contentAnswer {
+    padding: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    gap: 0.5rem;
+    border-radius: var(--border-radius-1);
+    background: var(--background-1);
+}
+
+.chat__contentAnswerImage, .chat__contentMyImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    background: var(--background-2);
+}
+
+.chat__contentSystem {
+    padding: 0.5rem;
+    text-align: center;
+    border: var(--border-1);
+    border-radius: var(--border-radius-1);
+}
+
+.chat__contentMy {
+    padding: 0.5rem;
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    gap: 0.5rem;
+    border-radius: var(--border-radius-1);
+    background: var(--background-block-2);
+}
+
+.chat__input {
+    position: relative;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.chat__input input {
+    background: var(--background-block);
+    border: none;
+}
+
+.chat__input button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 40px;
+    height: 40px;
+}

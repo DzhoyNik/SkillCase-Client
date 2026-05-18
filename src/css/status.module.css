@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+.status {
+    display: block;
+}
+
+.status p {
+    width: 100%;
+    color: var(--color-process);
+    padding: 0.5rem 1rem;
+    text-align: center;
+    white-space: nowrap;
+    border-radius: 8px;
+    font-weight: 600;
+    background: var(--background-process);
+    transition: all 0.3s ease;
+}
+
+.status__access p {
+    color: var(--color-accept);
+    background: var(--background-accept);
+}
+
+.status__rejected p {
+    color: var(--color-reject);
+    background: var(--background-reject);
+}

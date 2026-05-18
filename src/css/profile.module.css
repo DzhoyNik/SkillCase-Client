@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.wrapper {
+    display: flex;
+    justify-content: end;
+    min-height: 100vh;
+    padding: 0 100px;
+    padding-top: 104px;
+    padding-bottom: 3rem;
+}
+
+.wrapper__content {
+    width: 75%;
+}

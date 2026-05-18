@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.overlay__content {
+    width: 85%;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.overlay__logo {
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.overlay__logoIcon {
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    background: var(--background-3);
+}
+
+.overlay__profile {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    gap: 1rem;
+}
+
+.overlay__notify, .overlay__profileIcon {
+    pointer-events: auto;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 100px;
+    background: var(--background-block);
+    box-shadow: var(--box-shadow-1);
+    z-index: 10;
+}
+
+.overlay__notify {
+    width: 45px;
+}
+
+.overlay__profileIcon {
+    width: 90px;
+}
+
+.overlay__profileNotify, .overlay__profileMenu {
+    user-select: none;
+    position: absolute;
+    pointer-events: none;
+    top: 4rem;
+    right: -10rem;
+    width: 320px;
+    min-height: 240px;
+    padding: 0.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    opacity: 0;
+    justify-content: space-evenly;
+    background: var(--background-block);
+    border-radius: var(--border-radius-1);
+    box-shadow: var(--box-shadow-1);
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.overlay__profileNotify {
+    top: -4rem;
+    right: 0rem;
+}
+
+.overlay__profileNotifyOpen, .overlay__profileMenuOpen {
+    pointer-events: auto;
+    display: flex;
+    right: 0;
+    opacity: 1;
+}
+
+.overlay__profileNotifyOpen {
+    top: 4rem;
+}
+
+.overlay__profileMenuItem {
+    pointer-events: inherit;
+    display: flex;
+    gap: 0.65rem;
+    align-items: center;
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: var(--border-radius-1);
+}
+
+.overlay__profileMenuItem:hover {
+    background: rgba(0, 0, 255, 0.1);
+}
+
+.overlay__profileMenuItem svg {
+    transform: scale(1.2);
+}
+
+.overlay__profileMenu hr {
+    border: var(--border-1);
+}

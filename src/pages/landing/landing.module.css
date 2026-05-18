@@ -1,0 +1,241 @@
+@charset "UTF-8";
+
+.landing {
+    width: 100%;
+    min-height: 100vh;
+    padding: 35px 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--background-1);
+}
+
+.section {
+    width: 100%;
+    border-radius: var(--border-radius-1);
+    background-color: var(--background-2);
+}
+
+.topbar {
+    width: 100%;
+    height: 80px;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+.topbar__logo {
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;   
+}
+
+.topbar__logoIcon {
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    background: var(--background-3);
+}
+
+.topbar__nav {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.topbar__nav a {
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--font-color-2);
+    border-radius: 100px;
+}
+
+.topbar__auth {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.topbar__auth a {
+    padding: 1rem 1.5rem;
+    color: #fff;
+    background: var(--background-3);
+    border-radius: var(--border-radius-2);
+}
+
+.topbar__auth svg {
+    color: var(--background-3);
+    width: 45px;
+    height: 45px;
+    font-size: 2rem;
+    border: 4px solid var(--background-3);
+    border-radius: var(--border-radius-2);
+}
+
+.header {
+    width: 100%;
+    height: 500px;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 3fr 2fr;
+}
+
+.header__content {
+    padding: 2rem;
+    background: var(--background-3);
+    border-radius: var(--border-radius-1);
+}
+
+.header__content > * {
+    color: #fff;
+}
+
+.header__image {
+    background: var(--background-2);
+    border-radius: var(--border-radius-1);
+}
+
+.dignities {
+    width: 100%;
+    height: 150px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.dignities__section {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    background-color: var(--background-2);
+    border-radius: var(--border-radius-1);
+}
+
+.dignities__sectionIcon {
+    display: flex;
+    justify-content: center;
+}
+
+.dignities__sectionIcon img {
+    width: 60px;
+    height: 60px;
+}
+
+.dignities__sectionText {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.works {
+    color: #fff;
+    width: 100%;
+    padding: 1rem 0;
+    min-height: 400px;
+    background: var(--background-3);
+    border-radius: var(--border-radius-1);
+}
+
+.works__content {
+    width: 50%;
+    height: 100%;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+.works__content h1 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.works__content h2 {
+    color: #fff;
+}
+
+.works__content p {
+    color: #fff;
+}
+
+.works__steps {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.works__step {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 7fr;;
+}
+
+.works__stepInvert {
+    grid-template-columns: 7fr 1fr;
+}
+
+.works__stepNumber {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.works__stepNumber h1 {
+    font-size: 7rem;
+    font-weight: 600;
+}
+
+.works__stepText {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: var(--border-radius-1)
+}
+
+.cases {
+    width: 100%;
+    min-height: 400px;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 2rem;
+}
+
+.cases__content {
+    width: 75%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.cases__content h1 {
+    text-align: center;
+}
+
+.companies {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    padding: 0rem 10rem;
+    justify-content: space-evenly;
+    border-top: 3px solid var(--background-2);
+    border-bottom: 3px solid var(--background-2);
+}
+
+.companies img {
+    width: 150px;
+}
+
+.footer {
+    width: 100%;
+    height: 200px;
+    background-color: var(--background-2);
+}

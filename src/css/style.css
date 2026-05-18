@@ -1,0 +1,165 @@
+@charset "UTF-8";
+
+:root {
+    --color-accept: #6CEF52; 
+    --color-process: #FD8B45; 
+    --color-reject: #EB588E;
+
+    --background-1: #E6E6F4;
+    --background-2: #cfcfcf;
+    --background-3: #435CFF;
+
+    --background-sidebar: linear-gradient(90deg, #E6E6F4 12%, #FFFFFF 70%);
+    --background-sidebar-active: #fff;
+
+    --background-level-bar: rgba(0, 0, 0, 0.2);
+    --background-level-progress: #fff;
+
+    --background-section: linear-gradient(90deg, #FFFFFF, #E6E6F4);
+    --background-section-inverse: linear-gradient(-90deg, #FFFFFF, #E6E6F4);
+    --background-block: #fff;
+    --background-block-2: #435CFF;
+
+    --background-accept: #ddffdb; 
+    --background-process: #ffe6d6; 
+    --background-reject: #ffc3d9; 
+
+    --background-material: rgba(0, 0, 0, 0.05); 
+
+    --background-footer: #ffffff;
+
+    --font-color-1: #111;
+    --font-color-2: #666;
+
+    --border-1: 1px solid rgba(0, 0, 0, 0.2);
+
+    --border-radius-1: 15px;
+    --border-radius-2: 100px;
+    --border-radius-input: 12px;
+
+    --box-shadow-1: 0 0.35rem 10px rgba(0, 0, 0, 0.2);
+}
+
+.dark {
+    --background-1: #16161B;
+    --background-2: #36364C;
+
+    --background-sidebar: linear-gradient(90deg, #16161B 12%, #26262F 70%);
+    --background-sidebar-active: linear-gradient(90deg, #303038, #87879e00);
+    
+    --background-section: linear-gradient(90deg, #26262F, #16161B);
+    --background-section-inverse: linear-gradient(-90deg, #26262F, #16161B);
+    --background-block: #26262F;
+    --background-block-2: #2E2E38;
+
+    --background-accept: #1E4D32; 
+    --background-process: #4D301E; 
+    --background-reject: #4D1E2F;
+
+    --background-material: rgba(255, 255, 255, 0.05);
+
+    --background-footer: #121216;
+
+    --font-color-1: #fff;
+    --font-color-2: #87879E;
+
+    --border-1: 1px solid rgba(255, 255, 255, 0.2);
+
+    --box-shadow-1: 0 0.25rem 10px rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--background-1);
+}
+
+h1 {
+    color: var(--font-color-1);
+    font-size: 34px;
+    font-family: montserrat, sans-serif;
+    font-weight: 700;
+    line-height: 44px;
+}
+
+h2 {
+    color: var(--font-color-1);
+    font-size: 26px;
+    font-family: montserrat, sans-serif;
+    font-weight: 700;
+    line-height: 34px;
+}
+
+h3 {
+    color: var(--font-color-1);
+    font-size: 20px;
+    font-family: montserrat, sans-serif;
+    font-weight: 700;
+    line-height: 26px;
+}
+
+h4, a {
+    color: var(--font-color-1);
+    font-size: 16px;
+    font-family: montserrat, sans-serif;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    color: var(--font-color-1);
+    font-size: 14px;
+    font-family: montserrat, sans-serif;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+input, textarea, select {
+    user-select: none;
+    color: var(--font-color-1);
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: montserrat, sans-serif;
+    background: var(--background-1);
+    border-radius: var(--border-radius-input);
+    padding: 1rem;
+}
+
+textarea {
+    height: 24vh;
+    resize: none;
+}
+
+select {
+    cursor: pointer;
+    background: var(--background-block);
+}
+
+button {
+    width: 100%;
+    font-size: 20px;
+    font-family: montserrat, sans-serif;
+    font-weight: 700;
+    color: #fff;
+    background: var(--background-3);
+    border-radius: var(--border-radius-2);
+    padding: 1rem;
+    cursor: pointer;
+}
+
+svg {
+    color: var(--font-color-1);
+}

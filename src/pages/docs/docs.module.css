@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+.docs {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.docs__section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.docs__list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.docs__listSection {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--background-block-2);
+    border-radius: 8px;
+}
+
+.docs__listSection p {
+    color: var(--font-color-2);
+}

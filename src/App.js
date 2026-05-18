@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter } from "react-router"
+import AppRouter from './components/AppRouter';
+import './css/style.css'
+import { observer } from "mobx-react-lite";
+import { useContext, useEffect, useState } from "react";
+import { Context } from ".";
+import { check } from "./api/userAPI";
+import { checkCompany } from "./api/companyAPI";
 
-function App() {
+const App = observer(() =>  {
+  const { user, company } = useContext(Context)
+  const [ loading, setLoading ] = useState(true)
+
+  useEffect(() => {
+    check()
+      .then(data => {
+        user.setUser(data)
+        user.setIsAuth(true)
+
+        checkCompany(data.id)
+          .then(data => company.setCompany(data.company))
+          .catch(e => console.log(e))
+      })
+      .catch (e => console.log(e))
+      .finally( () => setLoading(false) )  
+  }, [])
+
+  if (loading) {
+    return <h2>Loading!</h2>
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <AppRouter />
+    </BrowserRouter>
   );
-}
+})
 
 export default App;

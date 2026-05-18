@@ -13,10 +13,17 @@
 
 # misc
 .DS_Store
+.env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
+
+/src/img/landing.png
+/src/pages/solution/tempData.js
+/src/pages/cases/tempCases.js
+/src/temp/
+/src/locales/
 
 npm-debug.log*
 yarn-debug.log*
